@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRECSTEM 2026 | Home</title>
+    <title>IRECSTEM 2026 | 1st International Research Conference</title>
+    <meta name="description"
+        content="Join the 1st International Research and Extension Conference on Science, Technology, Education, and Management - September 15-17, 2026 in Manila, Philippines">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
+
 <body>
+    <!-- Background Slideshow -->
+    <div class="bg-slideshow">
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+    <div class="bg-flag-accent"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
                 <a href="index.html">
-                    <div class="logo-placeholder conference-logo">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>IRECSTEM</span>
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
                     </div>
                 </a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,226 +48,237 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="call-for-papers.html" class="nav-link">Call for Papers</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Papers</a></li>
                 <li><a href="speakers.html" class="nav-link">Speakers</a></li>
                 <li><a href="program.html" class="nav-link">Program</a></li>
-                <li><a href="registration.html" class="nav-link">Registration</a></li>
                 <li><a href="venue.html" class="nav-link">Venue</a></li>
-                <li><a href="committee.html" class="nav-link">Committee</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-logos">
-                <div class="hero-logo university-logo">
-                    <i class="fas fa-university"></i>
-                    <span>University</span>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="gov-badge">
+                        <i class="fas fa-star"></i>
+                        1st International Conference
+                        <i class="fas fa-star"></i>
+                    </span>
                 </div>
-                <div class="hero-logo conference-logo-main">
-                    <i class="fas fa-globe-americas"></i>
-                    <span>IRECSTEM</span>
+                <h1 class="hero-title">
+                    <span class="title-line">IRECSTEM 2026</span>
+                    <span class="title-year">OLD SAGAY, PHILIPPINES</span>
+                </h1>
+                <p class="hero-subtitle">1st International Research and Extension Conference on Science, Technology,
+                    Education, and Management</p>
+
+                <div class="hero-tags">
+                    <span class="tag"><i class="fas fa-flask"></i> Science</span>
+                    <span class="tag"><i class="fas fa-microchip"></i> Technology</span>
+                    <span class="tag"><i class="fas fa-graduation-cap"></i> Education</span>
+                    <span class="tag"><i class="fas fa-chart-line"></i> Management</span>
                 </div>
-            </div>
-            <h1 class="hero-title">IRECSTEM 2026</h1>
-            <p class="hero-subtitle">1st International Research and Extension Conference<br>on Science, Technology, Education, and Management</p>
-            <div class="hero-info">
-                <span class="hero-date"><i class="far fa-calendar-alt"></i> September 2026</span>
-                <span class="hero-type"><i class="fas fa-map-marker-alt"></i> Face-to-Face Conference</span>
-            </div>
-            <div class="hero-buttons">
-                <a href="registration.html" class="btn btn-primary">Register Now</a>
-                <a href="call-for-papers.html" class="btn btn-secondary">Submit Paper</a>
-            </div>
-            <div class="countdown-container">
-                <div class="countdown-timer">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">00</span>
-                        <span class="countdown-label">Days</span>
+
+                <div class="hero-info">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="info-content">
+                            <span class="info-label">Date</span>
+                            <span class="info-value">Sept 15–17, 2026</span>
+                        </div>
                     </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-label">Hours</span>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-content">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">STATE UNIVERSITY OF NORTHER NEGROS</span>
+                        </div>
                     </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-label">Minutes</span>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-users"></i></div>
+                        <div class="info-content">
+                            <span class="info-label">Format</span>
+                            <span class="info-value">Face-to-Face</span>
+                        </div>
                     </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">Seconds</span>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="auth.php?register=1" class="btn btn-primary btn-large"
+                        onclick="trackAction('hero_register')">
+                        <i class="fas fa-user-plus"></i> Register Free
+                    </a>
+                    <a href="call-for-papers.html" class="btn btn-gold btn-large"
+                        onclick="trackAction('hero_submit_paper')">
+                        <i class="fas fa-file-alt"></i> Submit Paper
+                    </a>
+                    <a href="venue.html" class="btn btn-outline btn-large" onclick="trackAction('hero_view_venue')">
+                        <i class="fas fa-map-marker-alt"></i> View Venue
+                    </a>
+                </div>
+
+                <div class="countdown-wrapper">
+                    <div class="countdown-label">Conference Starts In</div>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-text">Days</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-text">Hours</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-text">Minutes</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-text">Seconds</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-scroll">
-            <a href="#overview"><i class="fas fa-chevron-down"></i></a>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <section class="section about" id="overview">
+    <!-- About Section -->
+    <section class="section about" id="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Overview</span>
+                <span class="section-tag">About</span>
                 <h2 class="section-title">About the Conference</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>The <strong>1st International Research and Extension Conference on Science, Technology, Education, and Management (IRECSTEM 2026)</strong> brings together researchers, educators, and industry professionals from around the world to share knowledge and advance interdisciplinary collaboration.</p>
-                    <p>This premier event provides a platform for presenting cutting-edge research, exchanging ideas, and fostering partnerships that address global challenges in science, technology, education, and management domains.</p>
-                    <p>Join us in September 2026 for an enriching experience that combines scholarly excellence with practical insights and networking opportunities.</p>
-                    <div class="cfp-buttons" style="margin-top: 30px;">
-                        <a href="about.html" class="btn btn-primary">Learn More</a>
-                    </div>
+            <div class="about-grid">
+                <a href="about.html" class="card" onclick="trackAction('about_global')">
+                    <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Global Network</h3>
+                    <p>Connect with researchers from 20+ countries advancing interdisciplinary collaboration.</p>
+                </a>
+                <a href="about.html" class="card" onclick="trackAction('about_innovation')">
+                    <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovation</h3>
+                    <p>Showcase cutting-edge research in Science, Technology, Education, and Management.</p>
+                </a>
+                <a href="about.html" class="card" onclick="trackAction('about_collaborate')">
+                    <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Collaboration</h3>
+                    <p>Foster partnerships with industry leaders and academic experts worldwide.</p>
+                </a>
+                <a href="about.html" class="card" onclick="trackAction('about_recognition')">
+                    <div class="card-icon"><i class="fas fa-award"></i></div>
+                    <h3>Recognition</h3>
+                    <p>Get certified and gain visibility for your scholarly work.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section tracks-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">By the Numbers</span>
+                <h2 class="section-title">Conference Statistics</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Attendees Expected</div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="500">0</span>
-                        <span class="stat-label">Expected Attendees</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="50">0</span>
-                        <span class="stat-label">Papers Presented</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="20">0</span>
-                        <span class="stat-label">Countries</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="4">0</span>
-                        <span class="stat-label">Conference Tracks</span>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Research Papers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Conference Tracks</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quick Links Section -->
-    <section class="section important-dates">
+    <!-- Tracks Section -->
+    <section class="section about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Mark Your Calendar</span>
-                <h2 class="section-title">Important Dates</h2>
-            </div>
-            <div class="dates-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">March 15, 2026</div>
-                    <div class="timeline-content">
-                        <h3>Abstract Submission</h3>
-                        <p>Deadline for abstract submission</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">April 30, 2026</div>
-                    <div class="timeline-content">
-                        <h3>Notification of Acceptance</h3>
-                        <p>Authors notified of paper acceptance</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">June 15, 2026</div>
-                    <div class="timeline-content">
-                        <h3>Full Paper Submission</h3>
-                        <p>Deadline for full paper submission</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">July 31, 2026</div>
-                    <div class="timeline-content">
-                        <h3>Early Bird Registration</h3>
-                        <p>Last day for early bird registration</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">September 15-17, 2026</div>
-                    <div class="timeline-content">
-                        <h3>Conference Dates</h3>
-                        <p>Main conference event</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Conference Tracks Preview -->
-    <section class="section tracks">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Conference Focus</span>
-                <h2 class="section-title">Conference Tracks</h2>
+                <span class="section-tag">Conference Tracks</span>
+                <h2 class="section-title">Research Focus Areas</h2>
             </div>
             <div class="tracks-grid">
-                <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
+                <a href="call-for-papers.html" class="track-card" onclick="trackAction('track_science')">
+                    <div class="track-icon"><i class="fas fa-flask"></i></div>
                     <h3>Science</h3>
-                    <p>Natural sciences, applied sciences, environmental science, and interdisciplinary scientific research.</p>
-                    <ul class="track-topics">
-                        <li>Physics & Chemistry</li>
-                        <li>Biology & Life Sciences</li>
-                        <li>Environmental Science</li>
-                        <li>Mathematics</li>
-                    </ul>
-                </div>
-                <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-laptop-code"></i>
+                    <p>Physics, Chemistry, Biology, Environmental Sciences</p>
+                    <div class="track-topics">
+                        <span>Research</span>
+                        <span>Discovery</span>
                     </div>
+                </a>
+                <a href="call-for-papers.html" class="track-card" onclick="trackAction('track_tech')">
+                    <div class="track-icon"><i class="fas fa-microchip"></i></div>
                     <h3>Technology</h3>
-                    <p>Innovation, digital transformation, engineering, and emerging technologies.</p>
-                    <ul class="track-topics">
-                        <li>Artificial Intelligence</li>
-                        <li>Data Science</li>
-                        <li>Cybersecurity</li>
-                        <li>Internet of Things</li>
-                    </ul>
-                </div>
-                <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-book-open"></i>
+                    <p>AI, Data Science, Cybersecurity, IoT</p>
+                    <div class="track-topics">
+                        <span>Digital</span>
+                        <span>Innovation</span>
                     </div>
+                </a>
+                <a href="call-for-papers.html" class="track-card" onclick="trackAction('track_education')">
+                    <div class="track-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Education</h3>
-                    <p>Pedagogy, educational technology, curriculum development, and lifelong learning.</p>
-                    <ul class="track-topics">
-                        <li>E-Learning</li>
-                        <li>Teacher Training</li>
-                        <li>Assessment Methods</li>
-                        <li>STEM Education</li>
-                    </ul>
-                </div>
-                <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <p>E-Learning, Pedagogy, Curriculum Design</p>
+                    <div class="track-topics">
+                        <span>Teaching</span>
+                        <span>Learning</span>
                     </div>
+                </a>
+                <a href="call-for-papers.html" class="track-card" onclick="trackAction('track_management')">
+                    <div class="track-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Management</h3>
-                    <p>Business administration, project management, entrepreneurship, and organizational behavior.</p>
-                    <ul class="track-topics">
-                        <li>Strategic Management</li>
-                        <li>Human Resource</li>
-                        <li>Marketing</li>
-                        <li>Operations</li>
-                    </ul>
-                </div>
+                    <p>Business Strategy, Leadership, Marketing</p>
+                    <div class="track-topics">
+                        <span>Strategy</span>
+                        <span>Growth</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); text-align: center;">
+    <section class="section cta-section">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px;">Ready to Join Us?</h2>
-            <p style="color: var(--gray-300); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;">
-                Be part of the 1st International Research and Extension Conference on Science, Technology, Education, and Management.
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="registration.html" class="btn btn-primary">Register Now</a>
-                <a href="call-for-papers.html" class="btn btn-outline" style="color: white; border-color: white;">Submit Your Paper</a>
+            <div class="cta-content">
+                <h2>Ready to Join IRECSTEM 2026?</h2>
+                <p>Registration is completely FREE. Secure your spot today and be part of this global research event.
+                </p>
+                <div class="cta-buttons">
+                    <a href="auth.php?register=1" class="btn btn-primary btn-large"
+                        onclick="trackAction('cta_register')">
+                        <i class="fas fa-rocket"></i> Register Now
+                    </a>
+                    <a href="about.html" class="btn btn-outline btn-large" onclick="trackAction('cta_learn_more')">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -255,57 +286,136 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>IRECSTEM 2026</span>
+                        <img src="logo.png" alt="IRECSTEM Logo"
+                            style="width: 50px; height: 50px; object-fit: contain; border-radius: 8px;">
                     </div>
-                    <p>1st International Research and Extension Conference on Science, Technology, Education, and Management</p>
-                    <p class="footer-date"><i class="far fa-calendar-alt"></i> September 2026 | Face-to-Face Conference</p>
+                    <span>IRECSTEM 2026</span>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="call-for-papers.html">Call for Papers</a></li>
-                        <li><a href="program.html">Program</a></li>
-                        <li><a href="venue.html">Venue</a></li>
-                        <li><a href="sponsors.html">Sponsors</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Stay updated with conference news</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 IRECSTEM. All rights reserved.</p>
+                <p>1st International Research and Extension Conference on Science, Technology, Education, and
+                    Management</p>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/IRECSTEM2026" target="_blank" class="social-icon"
+                        onclick="trackAction('social_facebook')">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/IRECSTEM2026" target="_blank" class="social-icon"
+                        onclick="trackAction('social_twitter')">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/irecstem2026" target="_blank" class="social-icon"
+                        onclick="trackAction('social_linkedin')">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com/irecstem2026" target="_blank" class="social-icon"
+                        onclick="trackAction('social_instagram')">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html" onclick="trackAction('footer_home')">Home</a></li>
+                    <li><a href="about.html" onclick="trackAction('footer_about')">About</a></li>
+                    <li><a href="speakers.html" onclick="trackAction('footer_speakers')">Speakers</a></li>
+                    <li><a href="program.html" onclick="trackAction('footer_program')">Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="call-for-papers.html" onclick="trackAction('footer_papers')">Call for Papers</a>
+                    </li>
+                    <li><a href="venue.html" onclick="trackAction('footer_venue')">Venue</a></li>
+                    <li><a href="contact.html" onclick="trackAction('footer_contact')">Contact</a></li>
+                    <li><a href="auth.php" onclick="trackAction('footer_login')">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@irecstem2026.org</p>
+                <p><i class="fas fa-phone"></i> +63 2 8888 1234</p>
+                <p><i class="fas fa-map-marker-alt"></i> SMX Convention Center, Manila</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IRECSTEM 2026. All rights reserved. | A project of DOST-STII</p>
+        </div>
         </div>
     </footer>
 
-    <!-- Toast Container -->
-    <div class="toast-container" id="toastContainer"></div>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Track button clicks (placeholder for analytics)
+        function trackAction(action) {
+            console.log('Action tracked:', action);
+            // You can integrate Google Analytics, Facebook Pixel, etc. here
+            // gtag('event', action);
+        }
+
+        // Initialize countdown
+        document.addEventListener('DOMContentLoaded', function () {
+            const conferenceDate = new Date('September 15, 2026 09:00:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = conferenceDate - now;
+
+                if (distance < 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Animated counters
+            const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.getAttribute('data-target'));
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                entry.target.textContent = target + '+';
+                                clearInterval(timer);
+                            } else {
+                                entry.target.textContent = Math.floor(current) + '+';
+                            }
+                        }, 30);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(stat => observer.observe(stat));
+        });
+    </script>
 </body>
+
 </html>

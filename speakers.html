@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speakers | IRECSTEM 2026</title>
+    <title>Speakers - IRECSTEM 2026</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Background Slideshow -->
+    <div class="bg-slideshow">
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+    <div class="bg-flag-accent"></div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
                 <a href="index.html">
-                    <div class="logo-placeholder conference-logo">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>IRECSTEM</span>
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
                     </div>
                 </a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,203 +43,152 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="call-for-papers.html" class="nav-link">Call for Papers</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Papers</a></li>
                 <li><a href="speakers.html" class="nav-link active">Speakers</a></li>
                 <li><a href="program.html" class="nav-link">Program</a></li>
-                <li><a href="registration.html" class="nav-link">Registration</a></li>
                 <li><a href="venue.html" class="nav-link">Venue</a></li>
-                <li><a href="committee.html" class="nav-link">Committee</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span class="current">Speakers</span>
-            </div>
-            <h1>Keynote Speakers</h1>
-            <p>Learn from world-renowned experts</p>
-        </div>
-    </section>
-
-    <!-- Keynote Speakers -->
-    <section class="section speakers">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Meet Our Experts</span>
-                <h2 class="section-title">Keynote Speakers</h2>
-            </div>
-            <div class="speakers-grid">
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="speaker-info">
-                        <h3>Dr. Sarah Mitchell</h3>
-                        <span class="speaker-title">Professor of Computer Science</span>
-                        <p class="speaker-affiliation">Stanford University, USA</p>
-                        <p class="speaker-bio">Leading expert in artificial intelligence and machine learning applications in education. Dr. Mitchell has published over 150 papers and is a recipient of the ACM Distinguished Scientist award.</p>
-                    </div>
+    <section class="hero" style="min-height: auto; padding-bottom: 40px;">
+        <div class="hero-container" style="padding-top: 120px;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="gov-badge">
+                        <i class="fas fa-microphone-alt"></i>
+                        Keynote Speakers
+                    </span>
                 </div>
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="speaker-info">
-                        <h3>Prof. James Chen</h3>
-                        <span class="speaker-title">Director of Research</span>
-                        <p class="speaker-affiliation">Tsinghua University, China</p>
-                        <p class="speaker-bio">Renowned researcher in sustainable technology and green innovation systems. Prof. Chen has led multiple international research initiatives and serves as an advisor to governments on climate policy.</p>
-                    </div>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="speaker-info">
-                        <h3>Dr. Maria Santos</h3>
-                        <span class="speaker-title">UNESCO Education Specialist</span>
-                        <p class="speaker-affiliation">UNESCO, France</p>
-                        <p class="speaker-bio">International expert in educational policy and inclusive learning environments. Dr. Santos has been instrumental in developing global frameworks for quality education access.</p>
-                    </div>
-                </div>
-                <div class="speaker-card">
-                    <div class="speaker-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="speaker-info">
-                        <h3>Prof. David Okonkwo</h3>
-                        <span class="speaker-title">Dean of Business School</span>
-                        <p class="speaker-affiliation">University of Lagos, Nigeria</p>
-                        <p class="speaker-bio">Distinguished scholar in strategic management and organizational leadership. Prof. Okonkwo has consulted for Fortune 500 companies and is a thought leader in emerging market strategies.</p>
-                    </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Our</span>
+                    <span class="title-year">Speakers</span>
+                </h1>
+                <p class="hero-subtitle">Learn from world-renowned experts</p>
+                <div class="hero-glance">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Sept 15–17, 2026</span>
+                    <span class="hero-glance-dot">•</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Manila, Philippines</span>
+                    <span class="hero-glance-dot">•</span>
+                    <i class="fas fa-users"></i>
+                    <span>Face-to-Face</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Speaker Sessions -->
-    <section class="section" style="background: var(--gray-100);">
+    <section class="section about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Sessions</span>
-                <h2 class="section-title">Keynote Sessions</h2>
+                <span class="section-tag">Keynote</span>
+                <h2 class="section-title">Featured Speakers</h2>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: white; padding: 30px; border-radius: var(--radius-xl); margin-bottom: 20px; box-shadow: var(--shadow); display: flex; gap: 20px; align-items: flex-start;">
-                    <div style="width: 80px; height: 80px; background: var(--navy); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <i class="fas fa-microphone" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--navy); margin-bottom: 5px;">Opening Keynote: The Future of AI in Education</h4>
-                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Dr. Sarah Mitchell | Day 1, 9:00 AM</p>
-                        <p style="color: var(--gray-600);">Exploring how artificial intelligence is transforming educational practices and what we can expect in the coming decade.</p>
-                    </div>
+            <div class="about-grid">
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 90px; height: 90px; border-radius: 50%;"><i class="fas fa-user" style="font-size: 2rem;"></i></div>
+                    <h3>Dr. Maria Santos</h3>
+                    <p style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Professor of Physics</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 12px;">University of the Philippines</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Leading researcher in quantum computing with 50+ published papers.</p>
                 </div>
-                <div style="background: white; padding: 30px; border-radius: var(--radius-xl); margin-bottom: 20px; box-shadow: var(--shadow); display: flex; gap: 20px; align-items: flex-start;">
-                    <div style="width: 80px; height: 80px; background: var(--navy); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <i class="fas fa-leaf" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--navy); margin-bottom: 5px;">Sustainable Technology for Global Development</h4>
-                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Prof. James Chen | Day 2, 9:00 AM</p>
-                        <p style="color: var(--gray-600);">How emerging technologies can address climate challenges and contribute to sustainable development goals.</p>
-                    </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 90px; height: 90px; border-radius: 50%;"><i class="fas fa-user" style="font-size: 2rem;"></i></div>
+                    <h3>Prof. James Chen</h3>
+                    <p style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Director of AI Research</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 12px;">Stanford University</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Expert in ethical AI and machine learning applications.</p>
                 </div>
-                <div style="background: white; padding: 30px; border-radius: var(--radius-xl); margin-bottom: 20px; box-shadow: var(--shadow); display: flex; gap: 20px; align-items: flex-start;">
-                    <div style="width: 80px; height: 80px; background: var(--navy); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <i class="fas fa-globe" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--navy); margin-bottom: 5px;">Building Inclusive Education Systems</h4>
-                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Dr. Maria Santos | Day 2, 2:00 PM</p>
-                        <p style="color: var(--gray-600);">Strategies for creating educational environments that are accessible and beneficial for all learners.</p>
-                    </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 90px; height: 90px; border-radius: 50%;"><i class="fas fa-user" style="font-size: 2rem;"></i></div>
+                    <h3>Dr. Sarah Okonkwo</h3>
+                    <p style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">STEM Education Head</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 12px;">UNESCO</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Champion for STEM education in 30+ countries.</p>
                 </div>
-                <div style="background: white; padding: 30px; border-radius: var(--radius-xl); box-shadow: var(--shadow); display: flex; gap: 20px; align-items: flex-start;">
-                    <div style="width: 80px; height: 80px; background: var(--navy); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                        <i class="fas fa-chart-line" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--navy); margin-bottom: 5px;">Leadership in Times of Change</h4>
-                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Prof. David Okonkwo | Day 3, 9:00 AM</p>
-                        <p style="color: var(--gray-600);">Navigating organizational challenges and leading effectively in rapidly evolving business environments.</p>
-                    </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 90px; height: 90px; border-radius: 50%;"><i class="fas fa-user" style="font-size: 2rem;"></i></div>
+                    <h3>Dr. Kenji Yamamoto</h3>
+                    <p style="color: var(--accent); font-weight: 600; margin-bottom: 8px;">Sustainability Expert</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 12px;">Tokyo Institute of Technology</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Pioneer in green technology and sustainable innovation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Become a Speaker -->
-    <section class="section" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); text-align: center;">
+    <section class="section cta-section">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px;">Want to Speak at IRECSTEM 2026?</h2>
-            <p style="color: var(--gray-300); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;">
-                We welcome proposals for panel discussions, workshops, and oral presentations. Contact us to explore speaking opportunities.
-            </p>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <div class="cta-content">
+                <h2>Want to Speak?</h2>
+                <p>Submit a paper to present at IRECSTEM 2026</p>
+                <div class="cta-buttons">
+                    <a href="auth.php?register=1" class="btn btn-primary btn-large">
+                        <i class="fas fa-file-alt"></i> Submit Paper
+                    </a>
+                    <a href="call-for-papers.html" class="btn btn-outline btn-large">
+                        <i class="fas fa-arrow-right"></i> Learn More
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <i class="fas fa-globe-americas"></i>
+                        <img src="logo.png" alt="IRECSTEM Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 8px;"></div>
                         <span>IRECSTEM 2026</span>
                     </div>
-                    <p>1st International Research and Extension Conference on Science, Technology, Education, and Management</p>
-                    <p class="footer-date"><i class="far fa-calendar-alt"></i> September 2026 | Face-to-Face Conference</p>
+                    <p>1st International Research and Extension Conference</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="program.html">Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="call-for-papers.html">Call for Papers</a></li>
-                        <li><a href="program.html">Program</a></li>
                         <li><a href="venue.html">Venue</a></li>
-                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="auth.php">Login</a></li>
                     </ul>
                 </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Stay updated with conference news</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@irecstem2026.org</p>
+                    <p><i class="fas fa-phone"></i> +63 2 8888 1234</p>
+                    <p><i class="fas fa-map-marker-alt"></i> SMX Convention Center, Manila</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 IRECSTEM. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p>&copy; 2026 IRECSTEM 2026. All rights reserved. | A project of DOST-STII</p>
             </div>
         </div>
     </footer>
 
-    <div class="toast-container" id="toastContainer"></div>
-    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -11,6 +11,9 @@ session_start();
 define('DATA_DIR', __DIR__ . '/data/');
 define('UPLOAD_DIR', __DIR__ . '/uploads/');
 
+// Some pages reference BASE_URL; keep it consistent across redirects
+define('BASE_URL', 'http://localhost/akogwapo/');
+
 // Create directories if not exists
 if (!file_exists(DATA_DIR)) {
     mkdir(DATA_DIR, 0755, true);
@@ -18,9 +21,6 @@ if (!file_exists(DATA_DIR)) {
 if (!file_exists(UPLOAD_DIR)) {
     mkdir(UPLOAD_DIR, 0755, true);
 }
-
-// Application URLs
-define('BASE_URL', 'http://localhost/akogwapo/');
 
 // Conference Settings
 define('CONF_NAME', 'IRECSTEM 2026');

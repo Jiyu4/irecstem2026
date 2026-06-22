@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsors & Partners | IRECSTEM 2026</title>
+    <title>Sponsors & Partners - IRECSTEM 2026</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Background Slideshow -->
+    <div class="bg-slideshow">
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+    <div class="bg-flag-accent"></div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
                 <a href="index.html">
-                    <div class="logo-placeholder conference-logo">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>IRECSTEM</span>
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
                     </div>
                 </a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,199 +43,187 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="call-for-papers.html" class="nav-link">Call for Papers</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Papers</a></li>
                 <li><a href="speakers.html" class="nav-link">Speakers</a></li>
                 <li><a href="program.html" class="nav-link">Program</a></li>
-                <li><a href="registration.html" class="nav-link">Registration</a></li>
                 <li><a href="venue.html" class="nav-link">Venue</a></li>
-                <li><a href="committee.html" class="nav-link">Committee</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span class="current">Sponsors & Partners</span>
+    <section class="hero" style="min-height: auto; padding-bottom: 40px;">
+        <div class="hero-container" style="padding-top: 120px;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="gov-badge">
+                        <i class="fas fa-handshake"></i>
+                        Partners
+                    </span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Sponsors &</span>
+                    <span class="title-year">Partners</span>
+                </h1>
+                <p class="hero-subtitle">Our valued partners making IRECSTEM 2026 possible</p>
             </div>
-            <h1>Sponsors & Partners</h1>
-            <p>Organizations making IRECSTEM 2026 possible</p>
         </div>
     </section>
 
-    <!-- Sponsors Section -->
-    <section class="section sponsors">
+    <section class="section about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Platinum</span>
+                <h2 class="section-title">Platinum Sponsors</h2>
+            </div>
+            <div class="about-grid">
+                <div class="card" style="text-align: center; padding: 40px;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #0038A8, #00257a); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-university" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h3>DOST Philippines</h3>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Department of Science and Technology</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 40px;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #0038A8, #00257a); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-graduation-cap" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h3>STII</h3>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Science and Technology Information Institute</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section tracks-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Gold</span>
+                <h2 class="section-title">Gold Sponsors</h2>
+            </div>
+            <div class="tracks-grid">
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-building"></i></div>
+                    <h3>UP Los Baños</h3>
+                    <p>University of the Philippines</p>
+                </div>
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>DLSU</h3>
+                    <p>De La Salle University</p>
+                </div>
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-atom"></i></div>
+                    <h3>Ateneo de Manila</h3>
+                    <p>Ateneo de Manila University</p>
+                </div>
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-flask"></i></div>
+                    <h3>FEU</h3>
+                    <p>Far Eastern University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Partners</span>
-                <h2 class="section-title">Our Sponsors</h2>
+                <h2 class="section-title">Media & Community Partners</h2>
             </div>
-            <div class="sponsors-content">
-                <div class="sponsor-tier">
-                    <h3><i class="fas fa-award" style="color: var(--primary); margin-right: 10px;"></i>Platinum Sponsors</h3>
-                    <div class="sponsor-logos">
-                        <div class="sponsor-logo">
-                            <i class="fas fa-building"></i>
-                            <span>TechCorp</span>
-                        </div>
-                        <div class="sponsor-logo">
-                            <i class="fas fa-university"></i>
-                            <span>Research Fund</span>
-                        </div>
-                    </div>
+            <div class="about-grid">
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto;"><i class="fas fa-newspaper"></i></div>
+                    <h3>Philippine Daily Inquirer</h3>
+                    <p>Media Partner</p>
                 </div>
-                <div class="sponsor-tier">
-                    <h3><i class="fas fa-star" style="color: var(--primary); margin-right: 10px;"></i>Gold Sponsors</h3>
-                    <div class="sponsor-logos">
-                        <div class="sponsor-logo">
-                            <i class="fas fa-flask"></i>
-                            <span>SciLabs</span>
-                        </div>
-                        <div class="sponsor-logo">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>EduGroup</span>
-                        </div>
-                        <div class="sponsor-logo">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>DataSys</span>
-                        </div>
-                    </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto;"><i class="fas fa-tv"></i></div>
+                    <h3>TV5</h3>
+                    <p>Broadcast Partner</p>
                 </div>
-                <div class="sponsor-tier">
-                    <h3><i class="fas fa-broadcast-tower" style="color: var(--primary); margin-right: 10px;"></i>Media Partners</h3>
-                    <div class="sponsor-logos">
-                        <div class="sponsor-logo">
-                            <i class="fas fa-newspaper"></i>
-                            <span>Science Daily</span>
-                        </div>
-                        <div class="sponsor-logo">
-                            <i class="fas fa-tv"></i>
-                            <span>TechNews</span>
-                        </div>
-                    </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto;"><i class="fas fa-wifi"></i></div>
+                    <h3>PLDT</h3>
+                    <p>Connectivity Partner</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto;"><i class="fas fa-plane"></i></div>
+                    <h3>Philippine Airlines</h3>
+                    <p>Travel Partner</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Become a Sponsor -->
-    <section class="section" style="background: var(--gray-100);">
+    <section class="section cta-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Partner With Us</span>
-                <h2 class="section-title">Become a Sponsor</h2>
-            </div>
-            <div style="max-width: 900px; margin: 0 auto;">
-                <p style="text-align: center; color: var(--gray-600); margin-bottom: 40px; font-size: 1.1rem;">
-                    Partner with IRECSTEM 2026 to showcase your organization to an international audience of researchers, educators, and industry professionals.
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                    <div style="background: white; padding: 30px; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow); border-top: 4px solid var(--primary);">
-                        <div style="width: 70px; height: 70px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-gem" style="font-size: 1.8rem; color: var(--primary);"></i>
-                        </div>
-                        <h4 style="color: var(--navy); margin-bottom: 10px;">Platinum Sponsorship</h4>
-                        <p style="color: var(--primary); font-weight: 700; font-size: 1.5rem; margin-bottom: 15px;">$10,000</p>
-                        <ul style="text-align: left; list-style: none; padding: 0;">
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Keynote speaking slot</li>
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Premium booth space</li>
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Logo on all materials</li>
-                            <li style="padding: 8px 0; color: var(--gray-600);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>10 complimentary passes</li>
-                        </ul>
-                    </div>
-                    <div style="background: white; padding: 30px; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow); border-top: 4px solid var(--primary);">
-                        <div style="width: 70px; height: 70px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-medal" style="font-size: 1.8rem; color: var(--primary);"></i>
-                        </div>
-                        <h4 style="color: var(--navy); margin-bottom: 10px;">Gold Sponsorship</h4>
-                        <p style="color: var(--primary); font-weight: 700; font-size: 1.5rem; margin-bottom: 15px;">$5,000</p>
-                        <ul style="text-align: left; list-style: none; padding: 0;">
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Exhibition booth</li>
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Logo on materials</li>
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>5 complimentary passes</li>
-                            <li style="padding: 8px 0; color: var(--gray-600);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Social media mentions</li>
-                        </ul>
-                    </div>
-                    <div style="background: white; padding: 30px; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow); border-top: 4px solid var(--primary);">
-                        <div style="width: 70px; height: 70px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-certificate" style="font-size: 1.8rem; color: var(--primary);"></i>
-                        </div>
-                        <h4 style="color: var(--navy); margin-bottom: 10px;">Silver Sponsorship</h4>
-                        <p style="color: var(--primary); font-weight: 700; font-size: 1.5rem; margin-bottom: 15px;">$2,500</p>
-                        <ul style="text-align: left; list-style: none; padding: 0;">
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Small booth space</li>
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Logo on website</li>
-                            <li style="padding: 8px 0; color: var(--gray-600); border-bottom: 1px solid var(--gray-200);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>2 complimentary passes</li>
-                            <li style="padding: 8px 0; color: var(--gray-600);"><i class="fas fa-check" style="color: var(--success); margin-right: 10px;"></i>Program acknowledgment</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <p style="color: var(--gray-600); margin-bottom: 20px;">Interested in custom sponsorship packages or in-kind support?</p>
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <div class="cta-content">
+                <h2>Become a Sponsor</h2>
+                <p>Partner with us to showcase your brand to 500+ researchers and professionals.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <i class="fas fa-globe-americas"></i>
+                        <img src="logo.png" alt="IRECSTEM Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 8px;"></div>
                         <span>IRECSTEM 2026</span>
                     </div>
-                    <p>1st International Research and Extension Conference on Science, Technology, Education, and Management</p>
-                    <p class="footer-date"><i class="far fa-calendar-alt"></i> September 2026 | Face-to-Face Conference</p>
+                    <p>1st International Research and Extension Conference</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="program.html">Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="call-for-papers.html">Call for Papers</a></li>
-                        <li><a href="program.html">Program</a></li>
                         <li><a href="venue.html">Venue</a></li>
-                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="auth.php">Login</a></li>
                     </ul>
                 </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Stay updated with conference news</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@irecstem2026.org</p>
+                    <p><i class="fas fa-phone"></i> +63 2 8888 1234</p>
+                    <p><i class="fas fa-map-marker-alt"></i> SMX Convention Center, Manila</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 IRECSTEM. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p>&copy; 2026 IRECSTEM 2026. All rights reserved. | A project of DOST-STII</p>
             </div>
         </div>
     </footer>
 
-    <div class="toast-container" id="toastContainer"></div>
-    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
+
 </html>

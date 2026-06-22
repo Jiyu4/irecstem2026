@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Call for Papers | IRECSTEM 2026</title>
+    <title>Call for Papers - IRECSTEM 2026</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Background Slideshow -->
+    <div class="bg-slideshow">
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+    <div class="bg-flag-accent"></div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
                 <a href="index.html">
-                    <div class="logo-placeholder conference-logo">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>IRECSTEM</span>
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
                     </div>
                 </a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,87 +43,79 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="call-for-papers.html" class="nav-link active">Call for Papers</a></li>
+                <li><a href="call-for-papers.html" class="nav-link active">Papers</a></li>
                 <li><a href="speakers.html" class="nav-link">Speakers</a></li>
                 <li><a href="program.html" class="nav-link">Program</a></li>
-                <li><a href="registration.html" class="nav-link">Registration</a></li>
                 <li><a href="venue.html" class="nav-link">Venue</a></li>
-                <li><a href="committee.html" class="nav-link">Committee</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span class="current">Call for Papers</span>
-            </div>
-            <h1>Call for Papers</h1>
-            <p>Submit your research for presentation at IRECSTEM 2026</p>
-        </div>
-    </section>
-
-    <!-- Call for Papers Content -->
-    <section class="section call-for-papers">
-        <div class="container">
-            <div class="cfp-content">
-                <div class="cfp-text">
-                    <h2>Call for Papers</h2>
-                    <p>We invite researchers, academics, and practitioners to submit papers on topics related to science, technology, education, and management. All accepted papers will be published in the conference proceedings and will be indexed in major academic databases.</p>
-
-                    <h3>Paper Requirements:</h3>
-                    <ul class="cfp-list">
-                        <li><i class="fas fa-check"></i> Original research not previously published</li>
-                        <li><i class="fas fa-check"></i> 4-8 pages in IEEE/ACM format</li>
-                        <li><i class="fas fa-check"></i> Abstract (200-300 words) required</li>
-                        <li><i class="fas fa-check"></i> Minimum 3 keywords</li>
-                        <li><i class="fas fa-check"></i> All papers peer-reviewed</li>
-                    </ul>
-
-                    <h3 style="margin-top: 30px;">Important Notes:</h3>
-                    <ul class="cfp-list">
-                        <li><i class="fas fa-info-circle"></i> At least one author must register and present the paper</li>
-                        <li><i class="fas fa-info-circle"></i> Each registration covers one paper only</li>
-                        <li><i class="fas fa-info-circle"></i> Authors may submit multiple papers</li>
-                        <li><i class="fas fa-info-circle"></i> Best papers will be selected for special sessions</li>
-                    </ul>
-
-                    <div class="cfp-buttons">
-                        <a href="#" class="btn btn-primary" id="submitPaperBtn">Submit Paper</a>
-                        <a href="#" class="btn btn-outline" id="downloadBrochureBtn">Download Brochure</a>
-                    </div>
+    <section class="hero" style="min-height: auto; padding-bottom: 40px;">
+        <div class="hero-container" style="padding-top: 120px;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="gov-badge">
+                        <i class="fas fa-file-alt"></i>
+                        Submit Your Research
+                    </span>
                 </div>
-                <div class="cfp-topics">
-                    <h3>Topics Include:</h3>
-                    <div class="topic-tags">
-                        <span class="topic-tag">AI in Education</span>
-                        <span class="topic-tag">Sustainable Development</span>
-                        <span class="topic-tag">Digital Transformation</span>
-                        <span class="topic-tag">Innovation Management</span>
-                        <span class="topic-tag">Research Methodology</span>
-                        <span class="topic-tag">Curriculum Design</span>
-                        <span class="topic-tag">Data Analytics</span>
-                        <span class="topic-tag">Leadership Studies</span>
-                        <span class="topic-tag">Climate Science</span>
-                        <span class="topic-tag">E-Government</span>
-                        <span class="topic-tag">Machine Learning</span>
-                        <span class="topic-tag">Entrepreneurship</span>
-                        <span class="topic-tag">Biotechnology</span>
-                        <span class="topic-tag">Renewable Energy</span>
-                        <span class="topic-tag">Smart Cities</span>
-                        <span class="topic-tag">Cybersecurity</span>
-                    </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Call for</span>
+                    <span class="title-year">Papers</span>
+                </h1>
+                <p class="hero-subtitle">Share your research with an international audience</p>
+                <div class="hero-glance">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Sept 15–17, 2026</span>
+                    <span class="hero-glance-dot">•</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Manila, Philippines</span>
+                    <span class="hero-glance-dot">•</span>
+                    <i class="fas fa-users"></i>
+                    <span>Face-to-Face</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Conference Tracks -->
-    <section class="section tracks">
+    <section class="section about">
+        <div class="container">
+            <div class="card" style="max-width: 800px; margin: 0 auto 40px; text-align: center;">
+                <h2 style="margin-bottom: 20px;">Submission Guidelines</h2>
+                <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8;">
+                    Submit original research in Science, Technology, Education, or Management. All accepted papers will be published in conference proceedings.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Format</h3>
+                    <p>4-8 pages, standard academic format</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-language"></i></div>
+                    <h3>Language</h3>
+                    <p>English only</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Co-Authors</h3>
+                    <p>Multiple authors allowed</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-search"></i></div>
+                    <h3>Review</h3>
+                    <p>Double-blind peer review</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section tracks-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Focus Areas</span>
@@ -116,214 +123,127 @@
             </div>
             <div class="tracks-grid">
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
+                    <div class="track-icon"><i class="fas fa-flask"></i></div>
                     <h3>Science</h3>
-                    <p>Natural sciences, applied sciences, environmental science, and interdisciplinary scientific research.</p>
-                    <ul class="track-topics">
-                        <li>Physics & Chemistry</li>
-                        <li>Biology & Life Sciences</li>
-                        <li>Environmental Science</li>
-                        <li>Mathematics</li>
-                    </ul>
+                    <p>Physics, Chemistry, Biology, Environmental Science</p>
+                    <div class="track-topics"><span>Research</span><span>Discovery</span></div>
                 </div>
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
+                    <div class="track-icon"><i class="fas fa-microchip"></i></div>
                     <h3>Technology</h3>
-                    <p>Innovation, digital transformation, engineering, and emerging technologies.</p>
-                    <ul class="track-topics">
-                        <li>Artificial Intelligence</li>
-                        <li>Data Science</li>
-                        <li>Cybersecurity</li>
-                        <li>Internet of Things</li>
-                    </ul>
+                    <p>AI, Data Science, Cybersecurity, IoT</p>
+                    <div class="track-topics"><span>Innovation</span><span>Digital</span></div>
                 </div>
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
+                    <div class="track-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Education</h3>
-                    <p>Pedagogy, educational technology, curriculum development, and lifelong learning.</p>
-                    <ul class="track-topics">
-                        <li>E-Learning</li>
-                        <li>Teacher Training</li>
-                        <li>Assessment Methods</li>
-                        <li>STEM Education</li>
-                    </ul>
+                    <p>E-Learning, Pedagogy, Curriculum</p>
+                    <div class="track-topics"><span>Teaching</span><span>Learning</span></div>
                 </div>
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+                    <div class="track-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Management</h3>
-                    <p>Business administration, project management, entrepreneurship, and organizational behavior.</p>
-                    <ul class="track-topics">
-                        <li>Strategic Management</li>
-                        <li>Human Resource</li>
-                        <li>Marketing</li>
-                        <li>Operations</li>
-                    </ul>
+                    <p>Strategy, Leadership, Marketing</p>
+                    <div class="track-topics"><span>Business</span><span>Growth</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Review Process -->
-    <section class="section" style="background: var(--gray-100);">
+    <section class="section about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Process</span>
-                <h2 class="section-title">Review Process</h2>
+                <span class="section-tag">Timeline</span>
+                <h2 class="section-title">Key Dates</h2>
             </div>
-            <div style="max-width: 900px; margin: 0 auto;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                    <div style="background: white; padding: 30px; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow);">
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <span style="color: white; font-size: 1.5rem; font-weight: 700;">1</span>
-                        </div>
-                        <h4 style="color: var(--navy); margin-bottom: 10px;">Abstract Review</h4>
-                        <p style="color: var(--gray-600); font-size: 0.95rem;">Submit abstract (200-300 words) for initial screening by the review committee.</p>
+            <div class="card" style="max-width: 700px; margin: 0 auto;">
+                <div class="timeline-mini">
+                    <div class="timeline-item">
+                        <span class="date">Mar 15, 2026</span>
+                        <span class="event">Abstract Submission</span>
                     </div>
-                    <div style="background: white; padding: 30px; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow);">
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <span style="color: white; font-size: 1.5rem; font-weight: 700;">2</span>
-                        </div>
-                        <h4 style="color: var(--navy); margin-bottom: 10px;">Notification</h4>
-                        <p style="color: var(--gray-600); font-size: 0.95rem;">Receive acceptance notification within 4-6 weeks of submission.</p>
+                    <div class="timeline-item">
+                        <span class="date">Apr 30, 2026</span>
+                        <span class="event">Acceptance Notification</span>
                     </div>
-                    <div style="background: white; padding: 30px; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow);">
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <span style="color: white; font-size: 1.5rem; font-weight: 700;">3</span>
-                        </div>
-                        <h4 style="color: var(--navy); margin-bottom: 10px;">Full Paper</h4>
-                        <p style="color: var(--gray-600); font-size: 0.95rem;">Submit full paper following the conference template and guidelines.</p>
-                    </div>
-                    <div style="background: white; padding: 30px; border-radius: var(--radius-xl); text-align: center; box-shadow: var(--shadow);">
-                        <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <span style="color: white; font-size: 1.5rem; font-weight: 700;">4</span>
-                        </div>
-                        <h4 style="color: var(--navy); margin-bottom: 10px;">Presentation</h4>
-                        <p style="color: var(--gray-600); font-size: 0.95rem;">Present your paper at the conference and receive feedback.</p>
+                    <div class="timeline-item">
+                        <span class="date">Jun 15, 2026</span>
+                        <span class="event">Camera-Ready Paper</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Submit?</h2>
+                <p>Create an account to submit your paper. Registration is FREE!</p>
+                <div class="cta-buttons">
+                    <a href="auth.php?register=1" class="btn btn-primary btn-large">
+                        <i class="fas fa-upload"></i> Submit Paper
+                    </a>
+                    <a href="about.html" class="btn btn-outline btn-large">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <i class="fas fa-globe-americas"></i>
+                        <img src="logo.png" alt="IRECSTEM Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 8px;"></div>
                         <span>IRECSTEM 2026</span>
                     </div>
-                    <p>1st International Research and Extension Conference on Science, Technology, Education, and Management</p>
-                    <p class="footer-date"><i class="far fa-calendar-alt"></i> September 2026 | Face-to-Face Conference</p>
+                    <p>1st International Research and Extension Conference</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="program.html">Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="call-for-papers.html">Call for Papers</a></li>
-                        <li><a href="program.html">Program</a></li>
                         <li><a href="venue.html">Venue</a></li>
-                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="auth.php">Login</a></li>
                     </ul>
                 </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Stay updated with conference news</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@irecstem2026.org</p>
+                    <p><i class="fas fa-phone"></i> +63 2 8888 1234</p>
+                    <p><i class="fas fa-map-marker-alt"></i> SMX Convention Center, Manila</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 IRECSTEM. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p>&copy; 2026 IRECSTEM 2026. All rights reserved. | A project of DOST-STII</p>
             </div>
         </div>
     </footer>
 
-    <!-- Paper Submission Modal -->
-    <div class="modal" id="paperModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Submit Your Paper</h3>
-                <button class="modal-close" aria-label="Close modal">&times;</button>
-            </div>
-            <form class="modal-form" id="paperForm">
-                <div class="form-group">
-                    <label for="paperTitle">Paper Title</label>
-                    <input type="text" id="paperTitle" name="paperTitle" required>
-                </div>
-                <div class="form-group">
-                    <label for="authorName">Corresponding Author</label>
-                    <input type="text" id="authorName" name="authorName" required>
-                </div>
-                <div class="form-group">
-                    <label for="authorEmail">Author Email</label>
-                    <input type="email" id="authorEmail" name="authorEmail" required>
-                </div>
-                <div class="form-group">
-                    <label for="track">Conference Track</label>
-                    <select id="track" name="track" required>
-                        <option value="">Select a track</option>
-                        <option value="science">Science</option>
-                        <option value="technology">Technology</option>
-                        <option value="education">Education</option>
-                        <option value="management">Management</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="abstract">Abstract (200-300 words)</label>
-                    <textarea id="abstract" name="abstract" rows="5" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="keywords">Keywords (separated by commas)</label>
-                    <input type="text" id="keywords" name="keywords" required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Submit Paper</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content modal-success">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h3>Submission Successful!</h3>
-            <p>Your paper has been submitted successfully. You will receive a confirmation email shortly.</p>
-            <button class="btn btn-primary" id="closeSuccessModal">Close</button>
-        </div>
-    </div>
-
-    <div class="toast-container" id="toastContainer"></div>
-    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
+
 </html>

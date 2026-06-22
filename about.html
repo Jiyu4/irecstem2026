@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | IRECSTEM 2026</title>
+    <title>About - IRECSTEM 2026</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Background Slideshow -->
+    <div class="bg-slideshow">
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+    <div class="bg-flag-accent"></div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
                 <a href="index.html">
-                    <div class="logo-placeholder conference-logo">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>IRECSTEM</span>
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
                     </div>
                 </a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -28,218 +43,215 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="call-for-papers.html" class="nav-link">Call for Papers</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Papers</a></li>
                 <li><a href="speakers.html" class="nav-link">Speakers</a></li>
                 <li><a href="program.html" class="nav-link">Program</a></li>
-                <li><a href="registration.html" class="nav-link">Registration</a></li>
                 <li><a href="venue.html" class="nav-link">Venue</a></li>
-                <li><a href="committee.html" class="nav-link">Committee</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span class="current">About</span>
+    <section class="hero" style="min-height: auto; padding-bottom: 40px;">
+        <div class="hero-container" style="padding-top: 120px;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="gov-badge">
+                        <i class="fas fa-info-circle"></i>
+                        About Us
+                    </span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">About</span>
+                    <span class="title-year">IRECSTEM 2026</span>
+                </h1>
+                <p class="hero-subtitle">Advancing research through global collaboration</p>
+                <div class="hero-glance">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Sept 15–17, 2026</span>
+                    <span class="hero-glance-dot">•</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Manila, Philippines</span>
+                    <span class="hero-glance-dot">•</span>
+                    <i class="fas fa-users"></i>
+                    <span>Face-to-Face</span>
+                </div>
             </div>
-            <h1>About the Conference</h1>
-            <p>Learn more about IRECSTEM 2026</p>
         </div>
     </section>
 
-    <!-- About Content -->
     <section class="section about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Welcome to IRECSTEM 2026</h2>
-                    <p>The <strong>1st International Research and Extension Conference on Science, Technology, Education, and Management (IRECSTEM 2026)</strong> is a premier academic event that brings together researchers, educators, practitioners, and industry professionals from around the globe.</p>
-                    <p>Our conference serves as a dynamic platform for sharing groundbreaking research, exchanging innovative ideas, and fostering meaningful collaborations across multiple disciplines. We believe that the convergence of diverse perspectives in science, technology, education, and management can lead to transformative solutions for global challenges.</p>
-                    <p>At IRECSTEM 2026, participants will have the opportunity to engage with leading experts, present their own research, and contribute to shaping the future of these interconnected fields. Whether you are an established researcher, a doctoral student, or a practicing professional, our conference offers valuable insights and networking opportunities.</p>
+            <div class="card" style="max-width: 800px; margin: 0 auto 40px; text-align: center;">
+                <h2 style="margin-bottom: 20px;">Our Mission</h2>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.8;">
+                    IRECSTEM 2026 brings together researchers, educators, and professionals to share knowledge and advance interdisciplinary collaboration in Science, Technology, Education, and Management.
+                </p>
+            </div>
 
-                    <h3 style="margin-top: 30px;">Our Mission</h3>
-                    <p>To create an inclusive international forum that promotes scholarly excellence, interdisciplinary collaboration, and the practical application of research findings in science, technology, education, and management.</p>
-
-                    <h3 style="margin-top: 30px;">Our Vision</h3>
-                    <p>To be a leading catalyst for global research advancement and knowledge exchange that addresses pressing societal challenges through innovative, cross-disciplinary approaches.</p>
+            <div class="about-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>Global Reach</h3>
+                    <p>Connecting researchers from 20+ countries to foster international collaboration.</p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Expected Attendees</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Papers Presented</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Countries</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Conference Tracks</span>
-                    </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-book"></i></div>
+                    <h3>Knowledge Exchange</h3>
+                    <p>Sharing breakthrough research across STEM disciplines.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community</h3>
+                    <p>Building lasting networks among academics and professionals.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certification</h3>
+                    <p>Official certificates for all participants.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Attend Section -->
-    <section class="section" style="background: var(--gray-100);">
+    <section class="section tracks-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Benefits</span>
-                <h2 class="section-title">Why Attend IRECSTEM 2026?</h2>
+                <span class="section-tag">Why Join</span>
+                <h2 class="section-title">Benefits of Attending</h2>
             </div>
             <div class="tracks-grid">
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Research Showcase</h3>
-                    <p>Present your research to an international audience and receive valuable feedback from peers and experts in your field.</p>
+                    <div class="track-icon"><i class="fas fa-microphone"></i></div>
+                    <h3>Present Research</h3>
+                    <p>Share your findings with international audience</p>
+                    <div class="track-topics"><span>Oral</span><span>Poster</span></div>
                 </div>
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Networking</h3>
-                    <p>Connect with researchers, academics, and industry professionals from around the world to build lasting collaborations.</p>
+                    <div class="track-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Network</h3>
+                    <p>Connect with experts in your field</p>
+                    <div class="track-topics"><span>Meet</span><span>Collaborate</span></div>
                 </div>
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Knowledge Sharing</h3>
-                    <p>Gain insights into the latest research trends, methodologies, and best practices across multiple disciplines.</p>
+                    <div class="track-icon"><i class="fas fa-newspaper"></i></div>
+                    <h3>Publish</h3>
+                    <p>Conference proceedings publication</p>
+                    <div class="track-topics"><span>Indexed</span><span>Cited</span></div>
                 </div>
                 <div class="track-card">
-                    <div class="track-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Publications</h3>
-                    <p>Selected papers will be published in conference proceedings with ISBN and indexed in major databases.</p>
+                    <div class="track-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Awards</h3>
+                    <p>Best paper and presentation recognition</p>
+                    <div class="track-topics"><span>Gold</span><span>Silver</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Conference Objectives -->
-    <section class="section">
+    <section class="section about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Goals</span>
-                <h2 class="section-title">Conference Objectives</h2>
+                <span class="section-tag">Timeline</span>
+                <h2 class="section-title">Important Dates</h2>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 20px; background: var(--gray-100); margin-bottom: 15px; border-radius: var(--radius-lg); display: flex; gap: 20px; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; flex-shrink: 0; margin-top: 3px;"></i>
-                        <div>
-                            <h4 style="color: var(--navy); margin-bottom: 5px;">Foster Interdisciplinary Dialogue</h4>
-                            <p style="color: var(--gray-600);">Create meaningful conversations between researchers from different disciplines to uncover novel approaches and solutions.</p>
-                        </div>
-                    </li>
-                    <li style="padding: 20px; background: var(--gray-100); margin-bottom: 15px; border-radius: var(--radius-lg); display: flex; gap: 20px; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; flex-shrink: 0; margin-top: 3px;"></i>
-                        <div>
-                            <h4 style="color: var(--navy); margin-bottom: 5px;">Promote Research Excellence</h4>
-                            <p style="color: var(--gray-600);">Recognize and celebrate outstanding research contributions with awards and publication opportunities.</p>
-                        </div>
-                    </li>
-                    <li style="padding: 20px; background: var(--gray-100); margin-bottom: 15px; border-radius: var(--radius-lg); display: flex; gap: 20px; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; flex-shrink: 0; margin-top: 3px;"></i>
-                        <div>
-                            <h4 style="color: var(--navy); margin-bottom: 5px;">Bridge Academia and Industry</h4>
-                            <p style="color: var(--gray-600);">Facilitate partnerships between academic researchers and industry practitioners for real-world impact.</p>
-                        </div>
-                    </li>
-                    <li style="padding: 20px; background: var(--gray-100); margin-bottom: 15px; border-radius: var(--radius-lg); display: flex; gap: 20px; align-items: flex-start;">
-                        <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; flex-shrink: 0; margin-top: 3px;"></i>
-                        <div>
-                            <h4 style="color: var(--navy); margin-bottom: 5px;">Support Emerging Researchers</h4>
-                            <p style="color: var(--gray-600);">Provide mentorship, guidance, and visibility for doctoral students and early-career researchers.</p>
-                        </div>
-                    </li>
-                </ul>
+            <div class="card" style="max-width: 700px; margin: 0 auto;">
+                <div class="timeline-mini">
+                    <div class="timeline-item">
+                        <span class="date">Mar 15, 2026</span>
+                        <span class="event">Abstract Submission Deadline</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">Apr 30, 2026</span>
+                        <span class="event">Notification of Acceptance</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">Jun 15, 2026</span>
+                        <span class="event">Full Paper Submission</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">Jul 31, 2026</span>
+                        <span class="event">Early Bird Registration</span>
+                    </div>
+                    <div class="timeline-item highlight">
+                        <span class="date">Sep 15-17, 2026</span>
+                        <span class="event">Conference Dates</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); text-align: center;">
+    <section class="section cta-section">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px;">Ready to Be Part of IRECSTEM 2026?</h2>
-            <p style="color: var(--gray-300); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;">
-                Join us in September 2026 for an unforgettable conference experience.
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="registration.html" class="btn btn-primary">Register Now</a>
-                <a href="contact.html" class="btn btn-outline" style="color: white; border-color: white;">Contact Us</a>
+            <div class="cta-content">
+                <h2>Join IRECSTEM 2026</h2>
+                <p>Registration is completely FREE. Be part of this global research event.</p>
+                <div class="cta-buttons">
+                    <a href="auth.php?register=1" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i> Register Now
+                    </a>
+                    <a href="venue.html" class="btn btn-outline btn-large">
+                        <i class="fas fa-map-marker-alt"></i> View Venue
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <i class="fas fa-globe-americas"></i>
+                        <img src="logo.png" alt="IRECSTEM Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 8px;"></div>
                         <span>IRECSTEM 2026</span>
                     </div>
-                    <p>1st International Research and Extension Conference on Science, Technology, Education, and Management</p>
-                    <p class="footer-date"><i class="far fa-calendar-alt"></i> September 2026 | Face-to-Face Conference</p>
+                    <p>1st International Research and Extension Conference</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="program.html">Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="call-for-papers.html">Call for Papers</a></li>
-                        <li><a href="program.html">Program</a></li>
                         <li><a href="venue.html">Venue</a></li>
-                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="auth.php">Login</a></li>
                     </ul>
                 </div>
-                <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Stay updated with conference news</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@irecstem2026.org</p>
+                    <p><i class="fas fa-phone"></i> +63 2 8888 1234</p>
+                    <p><i class="fas fa-map-marker-alt"></i> SMX Convention Center, Manila</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 IRECSTEM. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <p>&copy; 2026 IRECSTEM 2026. All rights reserved. | A project of DOST-STII</p>
             </div>
         </div>
     </footer>
 
-    <div class="toast-container" id="toastContainer"></div>
-    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
+
 </html>
