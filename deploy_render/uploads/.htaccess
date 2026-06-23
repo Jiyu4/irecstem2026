@@ -1,0 +1,12 @@
+# Only allow certain file types to be uploaded
+<FilesMatch "\.(?i:pdf|doc|docx)$">
+    Require all granted
+</FilesMatch>
+
+# Deny PHP execution
+<FilesMatch "\.php$">
+    Require all denied
+</FilesMatch>
+
+# Deny other files by default
+Require all denied
