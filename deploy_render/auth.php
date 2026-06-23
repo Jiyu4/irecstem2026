@@ -44,13 +44,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 try {
                     sendEmail($email, $name, 'IRECSTEM 2026 - Verification Code', '<p>Your code: ' . $verification_code . '</p>');
                     $message = 'A verification code has been sent to your email.';
+                    $message_type = 'success';
+                    $show_verify_form = true;
+                    $pending_email = $email;
+                    $pending_name = $name;
                 } catch (Exception $e) {
-                    $message = 'Verification code: ' . $verification_code . ' (SMTP not configured)';
+                    $message = 'Unable to send email. Please check SMTP configuration.';
+                    $message_type = 'error';
+                    // Don't show the code - email failed, registration can't proceed
+                    unset($_SESSION['pending_registration']);
+                    $show_verify_form = false;
                 }
-                $message_type = 'success';
-                $show_verify_form = true;
-                $pending_email = $email;
-                $pending_name = $name;
             }
         }
     } elseif ($action === 'verify') {
@@ -112,11 +116,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 try {
                     sendEmail($email, $user['name'] ?? 'User', 'IRECSTEM 2026 - Login Code', '<p>Your login code: ' . $login_code . '</p>');
                     $message = 'A login code has been sent to your email.';
+                    $message_type = 'success';
+                    $show_login_verify = true;
                 } catch (Exception $e) {
-                    $message = 'Login code: ' . $login_code . ' (SMTP not configured)';
+                    $message = 'Unable to send email. Please check SMTP configuration.';
+                    $message_type = 'error';
+                    // Clear login session data since email failed
+                    unset($_SESSION['login_code'], $_SESSION['login_email'], $_SESSION['login_user_id']);
+                    $show_login_verify = false;
                 }
-                $message_type = 'success';
-                $show_login_verify = true;
             }
         }
     } elseif ($action === 'verify_login') {

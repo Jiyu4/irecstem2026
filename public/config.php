@@ -30,13 +30,13 @@ define('BASE_URL', $protocol . $host . $basePath . '/');
 define('CONF_NAME', 'IRECSTEM 2026');
 define('CONF_DATE', 'September 15-17, 2026');
 
-// Email Configuration (PHPMailer SMTP)
-define('SMTP_HOST', 'smtp.gmail.com');
-define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'giomilitar39@gmail.com'); // Change this
-define('SMTP_PASSWORD', 'qkfq qsqx rbbj wqyj'); // Change this - use Gmail App Password
-define('SMTP_FROM_EMAIL', SMTP_USERNAME); // Use same email as username for reliability
-define('SMTP_FROM_NAME', 'IRECSTEM 2026');
+// Email Configuration (PHPMailer SMTP) - Use environment variables on server
+define('SMTP_HOST', getenv('SMTP_HOST') ?: 'smtp.gmail.com');
+define('SMTP_PORT', (int)(getenv('SMTP_PORT') ?: 587));
+define('SMTP_USERNAME', getenv('SMTP_USERNAME') ?: 'giomilitar39@gmail.com');
+define('SMTP_PASSWORD', getenv('SMTP_PASSWORD') ?: '');
+define('SMTP_FROM_EMAIL', getenv('SMTP_FROM_EMAIL') ?: SMTP_USERNAME);
+define('SMTP_FROM_NAME', getenv('SMTP_FROM_NAME') ?: 'IRECSTEM 2026');
 
 // JSON Database Helper Functions
 class JsonDB {
