@@ -6,12 +6,6 @@ services:
     plan: free
     buildCommand: ""
     startCommand: "php -S $HOST:$PORT"
-    headers:
-      - path: /*
-        name: Security Headers
-        value: |
-          X-Frame-Options: SAMEORIGIN
-          X-Content-Type-Options: nosniff
-envVars:
-  - key: PHP_VERSION
-    value: "8.2"
+    envVars:
+      - key: PHP_VERSION
+        value: "8.2"
