@@ -6,6 +6,8 @@
 
 // Start session
 session_start();
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_strict_mode', 1);
 
 // Data directory for JSON files
 define('DATA_DIR', __DIR__ . '/data/');
@@ -201,6 +203,11 @@ function generateCertificateNumber() {
  * Send email using PHPMailer SMTP
  */
 function sendEmail($to, $toName, $subject, $body) {
+    // Check if SMTP is configured
+    if (empty(SMTP_PASSWORD)) {
+        throw new Exception('SMTP password not configured');
+    }
+
     require_once __DIR__ . '/vendor/autoload.php';
 
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
