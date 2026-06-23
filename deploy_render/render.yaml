@@ -16,7 +16,7 @@ services:
       - key: SMTP_USERNAME
         value: "giomilitar39@gmail.com"
       - key: SMTP_PASSWORD
-        value: "qkfq qsqx rbbj wqyj"
+        value: "lzra fgxe gcge aois"
       - key: SMTP_FROM_EMAIL
         value: "giomilitar39@gmail.com"
       - key: SMTP_FROM_NAME
