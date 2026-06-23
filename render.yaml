@@ -2,7 +2,7 @@
 services:
   - type: web
     name: irecstem2026
-    runtime: php
+    runtime: php82
     plan: free
     buildCommand: ""
     startCommand: "php -S $HOST:$PORT"
