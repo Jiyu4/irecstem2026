@@ -4,19 +4,13 @@
 services:
   - type: web
     name: irecstem2026
-    rootDir: public
-    runtime: php
+    rootDir: deploy_render
+    runtime: php82
     plan: free
     buildCommand: |
-      # Install Composer dependencies if needed
-      if [ -f composer.json ]; then
-        composer install --no-dev --optimize-autoloader
-      fi
-    startCommand: |
-      # Ensure data directories are writable
-      chmod -R 755 data/
-      chmod -R 755 uploads/
-      php -S $HOST:$PORT
+      composer install --no-dev --optimize-autoloader
+      chmod -R 755 data/ uploads/
+    startCommand: php -S $HOST:$PORT
     headers:
       - path: /*
         name: Security Headers
@@ -25,9 +19,20 @@ services:
           X-Content-Type-Options: nosniff
           X-XSS-Protection: 1; mode=block
 
-# Environment variables
 envVars:
   - key: PHP_VERSION
     value: "8.2"
   - key: APP_ENV
     value: production
+  - key: SMTP_HOST
+    value: "smtp.gmail.com"
+  - key: SMTP_PORT
+    value: "587"
+  - key: SMTP_USERNAME
+    value: "giomilitar39@gmail.com"
+  - key: SMTP_PASSWORD
+    value: "lzra fgxe gcge aois"
+  - key: SMTP_FROM_EMAIL
+    value: "giomilitar39@gmail.com"
+  - key: SMTP_FROM_NAME
+    value: "IRECSTEM 2026"
