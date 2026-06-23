@@ -4,7 +4,7 @@ services:
     name: irecstem2026
     runtime: php82
     plan: free
-    buildCommand: ""
+    buildCommand: "echo 'PHP site - no build needed'"
     startCommand: "php -S $HOST:$PORT"
     envVars:
       - key: PHP_VERSION
