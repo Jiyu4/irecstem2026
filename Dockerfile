@@ -1,7 +1,12 @@
-FROM nginx:alpine
+FROM php:8.2-cli
 
-COPY . /usr/share/nginx/html
+WORKDIR /app
 
-EXPOSE 80
+# Copy application files
+COPY . /app
 
-CMD ["nginx", "-g", "daemon off;"]
+# Expose port 10000
+EXPOSE 10000
+
+# Start PHP built-in server
+CMD ["php", "-S", "0.0.0.0:10000"]

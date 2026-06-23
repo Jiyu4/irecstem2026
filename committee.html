@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committee - IRECSTEM 2026</title>
+    <base href="./">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-slideshow">
+        <div class="bg-slide bg-slide-1"></div>
+        <div class="bg-slide bg-slide-2"></div>
+        <div class="bg-slide bg-slide-3"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
+                    </div>
+                </a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Papers</a></li>
+                <li><a href="speakers.html" class="nav-link">Speakers</a></li>
+                <li><a href="program.html" class="nav-link">Program</a></li>
+                <li><a href="venue.html" class="nav-link">Venue</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: auto; padding-bottom: 40px;">
+        <div class="hero-container" style="padding-top: 120px;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="gov-badge">
+                        <i class="fas fa-users"></i>
+                        Our Team
+                    </span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Organizing</span>
+                    <span class="title-year">Committee</span>
+                </h1>
+                <p class="hero-subtitle">The team behind IRECSTEM 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Team</span>
+                <h2 class="section-title">Committee Members</h2>
+            </div>
+            <div class="about-grid">
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--gold));">
+                        <i class="fas fa-crown" style="font-size: 1.8rem;"></i>
+                    </div>
+                    <h3>Prof. John Anderson</h3>
+                    <p style="color: var(--accent); font-weight: 600;">Honorary Chair</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">University President</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 80px; height: 80px; border-radius: 50%;">
+                        <i class="fas fa-user-tie" style="font-size: 1.8rem;"></i>
+                    </div>
+                    <h3>Dr. Elena Rodriguez</h3>
+                    <p style="color: var(--accent); font-weight: 600;">Conference Chair</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Dean of Research</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 80px; height: 80px; border-radius: 50%;">
+                        <i class="fas fa-laptop-code" style="font-size: 1.8rem;"></i>
+                    </div>
+                    <h3>Dr. Michael Zhang</h3>
+                    <p style="color: var(--accent); font-weight: 600;">Technical Chair</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Department Head, Computer Science</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon" style="margin: 0 auto 20px; width: 80px; height: 80px; border-radius: 50%;">
+                        <i class="fas fa-users" style="font-size: 1.8rem;"></i>
+                    </div>
+                    <h3>Dr. Amara Patel</h3>
+                    <p style="color: var(--accent); font-weight: 600;">Program Chair</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Research Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section tracks-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Advisory Board</span>
+                <h2 class="section-title">Scientific Committee</h2>
+            </div>
+            <div class="tracks-grid">
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Dr. Anna Kowalski</h3>
+                    <p>Warsaw University, Poland</p>
+                </div>
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Prof. Hiroshi Tanaka</h3>
+                    <p>Tokyo Institute of Technology, Japan</p>
+                </div>
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Dr. Fatima Al-Hassan</h3>
+                    <p>American University of Beirut, Lebanon</p>
+                </div>
+                <div class="track-card">
+                    <div class="track-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Prof. Carlos Mendez</h3>
+                    <p>University of Buenos Aires, Argentina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Want to Join the Team?</h2>
+                <p>We're looking for enthusiastic volunteers to help make IRECSTEM 2026 a success.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 IRECSTEM 2026. All rights reserved. | A project of DOST-STII</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

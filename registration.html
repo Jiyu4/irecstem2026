@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - IRECSTEM 2026</title>
+    <base href="./">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-slideshow">
+        <div class="bg-slide bg-slide-1"></div>
+        <div class="bg-slide bg-slide-2"></div>
+        <div class="bg-slide bg-slide-3"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
+                    </div>
+                </a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Papers</a></li>
+                <li><a href="speakers.html" class="nav-link">Speakers</a></li>
+                <li><a href="program.html" class="nav-link">Program</a></li>
+                <li><a href="venue.html" class="nav-link">Venue</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: auto; padding-bottom: 40px;">
+        <div class="hero-container" style="padding-top: 120px;">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="gov-badge">
+                        <i class="fas fa-user-plus"></i>
+                        Register Now
+                    </span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Conference</span>
+                    <span class="title-year">Registration</span>
+                </h1>
+                <p class="hero-subtitle">Registration is completely FREE</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about">
+        <div class="container">
+            <div class="card" style="max-width: 700px; margin: 0 auto 40px; text-align: center;">
+                <h2 style="margin-bottom: 20px;">Why Register?</h2>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.8;">
+                    Create a free account to submit papers, register for the conference, and connect with researchers from around the world.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Submit Papers</h3>
+                    <p>Submit and track your research paper submissions through our online system.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-id-card"></i></div>
+                    <h3>Get Your Badge</h3>
+                    <p>Receive your conference badge and participant materials on arrival.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certificate</h3>
+                    <p>Get your official certificate of participation after the conference.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Meals Included</h3>
+                    <p>Complimentary lunch and coffee breaks during conference days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join?</h2>
+                <p>Create your free account to register for IRECSTEM 2026</p>
+                <div class="cta-buttons">
+                    <a href="auth.php?register=1" class="btn btn-primary btn-large">
+                        <i class="fas fa-user-plus"></i> Register Now
+                    </a>
+                    <a href="auth.php" class="btn btn-outline btn-large">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 IRECSTEM 2026. All rights reserved. | A project of DOST-STII</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
