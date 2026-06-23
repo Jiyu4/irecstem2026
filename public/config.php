@@ -5,9 +5,11 @@
  */
 
 // Start session
-session_start();
-ini_set('session.cookie_httponly', 1);
-ini_set('session.use_strict_mode', 1);
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.use_strict_mode', '1');
+}
 
 // Data directory for JSON files
 define('DATA_DIR', __DIR__ . '/data/');
