@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Dates | IRECSTEM 2026</title>
+    <base href="./">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background -->
+    <div class="bg-slideshow">
+        <div class="bg-slide bg-slide-1"></div>
+        <div class="bg-slide bg-slide-2"></div>
+        <div class="bg-slide bg-slide-3"></div>
+        <svg style="position: absolute; width: 0; height: 0;">
+            <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+        </svg>
+        <div class="gradient-blob-1"></div>
+        <div class="gradient-blob-2"></div>
+        <div class="gradient-blob-3"></div>
+        <div class="curved-lines-bg">
+            <svg class="curved-lines-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <path class="glow-line glow-line-1" d="M-100,200 Q400,100 600,300 T1000,250 T1400,400 T1920,200"/>
+                <path class="glow-line glow-line-2" d="M-50,500 Q300,400 500,550 T900,480 T1300,600 T1920,450"/>
+                <path class="glow-line glow-line-3" d="M0,700 Q400,600 700,750 T1200,680 T1600,800 T1920,700"/>
+                <path class="glow-line glow-line-4" d="M0,900 Q350,800 600,950 T1100,850 T1500,980 T1920,880"/>
+                <path class="glow-line glow-line-2" d="M-100,350 Q250,280 450,400 T800,320 T1150,450 T1920,330" opacity="0.4"/>
+                <path class="glow-line glow-line-1" d="M0,600 Q300,520 550,650 T950,580 T1350,700 T1920,580" opacity="0.5"/>
+            </svg>
+        </div>
+    </div>
+    <div class="golden-dots-container" id="goldenDots"></div>
+    <div class="bg-overlay"></div>
+    <div class="bg-accents"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <div class="nav-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">IRECSTEM</span>
+                        <span class="logo-year">2026</span>
+                    </div>
+                </a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Call for Papers</a></li>
+                <li><a href="dates.html" class="nav-link active">Important Dates</a></li>
+                <li><a href="auth.php?register=1" class="nav-link">Register for Conference</a></li>
+                <li><a href="call-for-papers.html" class="nav-link">Submit Paper</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-auth"><a href="auth.php" class="btn btn-primary">Login / Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Important Dates</span>
+            </div>
+            <h1>Important Dates</h1>
+            <p>Mark your calendar for these key deadlines</p>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="section">
+        <div class="container">
+            <div class="dates-grid">
+                <div class="dates-card">
+                    <div class="dates-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date">March 15, 2026</span>
+                        <h3>Abstract Submission Deadline</h3>
+                        <p>Submit your abstracts for review by this date to be considered for presentation.</p>
+                    </div>
+                </div>
+
+                <div class="dates-card">
+                    <div class="dates-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date">April 15, 2026</span>
+                        <h3>Notification of Acceptance</h3>
+                        <p>Authors will be notified of abstract acceptance decisions.</p>
+                    </div>
+                </div>
+
+                <div class="dates-card">
+                    <div class="dates-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date">May 15, 2026</span>
+                        <h3>Full Paper Submission</h3>
+                        <p>Submit your completed papers following the conference template.</p>
+                    </div>
+                </div>
+
+                <div class="dates-card">
+                    <div class="dates-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date">June 1, 2026</span>
+                        <h3>Review Comments Released</h3>
+                        <p>Authors receive reviewer feedback and revision suggestions.</p>
+                    </div>
+                </div>
+
+                <div class="dates-card">
+                    <div class="dates-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date">July 1, 2026</span>
+                        <h3>Camera-Ready Paper Due</h3>
+                        <p>Final revised papers must be submitted by this date.</p>
+                    </div>
+                </div>
+
+                <div class="dates-card">
+                    <div class="dates-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date">August 1, 2026</span>
+                        <h3>Early Bird Registration</h3>
+                        <p>Register early to avail of discounted rates.</p>
+                    </div>
+                </div>
+
+                <div class="dates-card featured">
+                    <div class="dates-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date highlight">September 15-17, 2026</span>
+                        <h3>Conference Dates</h3>
+                        <p>Join us for three days of presentations, networking, and collaboration.</p>
+                    </div>
+                </div>
+
+                <div class="dates-card">
+                    <div class="dates-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="dates-content">
+                        <span class="dates-date">September 30, 2026</span>
+                        <h3>Certificate Distribution</h3>
+                        <p>Digital certificates will be sent to all presenters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Submit Your Paper?</h2>
+                <p>Don't miss the opportunity to present at IRECSTEM 2026. Submit your abstract today!</p>
+                <div class="cta-buttons">
+                    <a href="auth.php" class="btn btn-primary btn-large">
+                        <i class="fas fa-user-plus"></i> Register / Login
+                    </a>
+                    <a href="call-for-papers.html" class="btn btn-gold btn-large">
+                        <i class="fas fa-file-alt"></i> Submit Paper
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="IRECSTEM Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 8px;">
+                    </div>
+                    <span>IRECSTEM 2026</span>
+                </div>
+                <p>1st International Research and Extension Conference on Science, Technology, Education, and Management</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/IRECSTEM2026" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/IRECSTEM2026" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/company/irecstem2026" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/irecstem2026" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="call-for-papers.html">Call for Papers</a></li>
+                    <li><a href="dates.html">Important Dates</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="auth.php">Login / Register</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@irecstem2026.org</p>
+                <p><i class="fas fa-phone"></i> +63 2 8888 1234</p>
+                <p><i class="fas fa-map-marker-alt"></i> STATE UNIVERSITY OF NORTHER NEGROS</p>
+            </div>
+        </div>
+                <div class="footer-bottom">
+                <p>&copy; 2026 IRECSTEM 2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+    <script>(function(){const c=document.getElementById('goldenDots');if(!c)return;function d(){const g=document.createElement('div');g.className='golden-dot';const s=Math.random()*8+4,l=Math.random()*100,du=Math.random()*5+8,de=Math.random()*2,a=['rise','rise2','rise3'][Math.floor(Math.random()*3)];g.style.cssText=`width:${s}px;height:${s}px;left:${l}%;animation:${a} ${du}s ease-in-out ${de}s infinite`;c.appendChild(g);setTimeout(()=>g.remove(),(du+de)*1000+100)}for(let i=0;i<25;i++)setTimeout(()=>d(),i*400);setInterval(()=>{if(c.children.length<20)d()},800)})();</script>
+</body>
+</html>
