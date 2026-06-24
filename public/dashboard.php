@@ -297,20 +297,22 @@ usort($my_papers, function($a, $b) {
                                     </span>
                                 </td>
                                 <td style="padding: 15px 10px; text-align: center;">
-                                    <?php if (!empty($paper['file_path'])): ?>
-                                    <a href="uploads/<?php echo htmlspecialchars($paper['file_path']); ?>" download class="btn btn-sm" style="padding: 6px 12px; font-size: 0.8rem; background: var(--primary); color: white; border-radius: 8px; margin: 2px; display: inline-block; text-decoration: none;">
-                                        <i class="fas fa-download"></i>
-                                    </a>
-                                    <?php endif; ?>
-                                    <?php if (($paper['status'] ?? '') === 'pending'): ?>
-                                    <form method="POST" action="" style="display: inline;" onsubmit="return confirm('Delete this paper?');">
-                                        <input type="hidden" name="action" value="delete_paper">
-                                        <input type="hidden" name="paper_id" value="<?php echo $paper['id']; ?>">
-                                        <button type="submit" style="padding: 6px 12px; font-size: 0.8rem; background: rgba(220,53,69,0.2); color: #f87171; border: 1px solid #dc3545; border-radius: 8px; cursor: pointer; margin: 2px;">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
-                                    <?php endif; ?>
+                                    <div style="display: flex; justify-content: center; gap: 8px; align-items: center;">
+                                        <?php if (!empty($paper['file_path'])): ?>
+                                        <a href="uploads/<?php echo htmlspecialchars($paper['file_path']); ?>" download class="btn btn-sm" style="padding: 6px 14px; font-size: 0.8rem; background: var(--primary); color: white; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">
+                                            <i class="fas fa-download"></i> Download
+                                        </a>
+                                        <?php endif; ?>
+                                        <?php if (($paper['status'] ?? '') === 'pending'): ?>
+                                        <form method="POST" action="" onsubmit="return confirm('Delete this paper?');">
+                                            <input type="hidden" name="action" value="delete_paper">
+                                            <input type="hidden" name="paper_id" value="<?php echo $paper['id']; ?>">
+                                            <button type="submit" style="padding: 6px 14px; font-size: 0.8rem; background: rgba(220,53,69,0.2); color: #f87171; border: 1px solid #dc3545; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                        <?php endif; ?>
+                                    </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
