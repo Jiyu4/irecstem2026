@@ -60,7 +60,14 @@ class JsonDB {
     }
 
     public function insert(&$item) {
-        $item['id'] = count($this->data) + 1;
+        // Get the highest existing ID and add 1 (not count+1 to avoid collisions)
+        $max_id = 0;
+        foreach ($this->data as $row) {
+            if (isset($row['id']) && $row['id'] > $max_id) {
+                $max_id = $row['id'];
+            }
+        }
+        $item['id'] = $max_id + 1;
         $item['created_at'] = date('Y-m-d H:i:s');
         $item['updated_at'] = date('Y-m-d H:i:s');
         $this->data[] = $item;
