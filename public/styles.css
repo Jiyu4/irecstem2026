@@ -1151,7 +1151,7 @@ h4 {
    Footer
 ======================================== */
 .footer {
-    background: rgba(0, 37, 122, 0.85);
+    background: rgba(10, 25, 60, 0.98) !important;
     padding: 70px 0 0;
     position: relative;
     border-top: 3px solid var(--yellow);
@@ -1165,6 +1165,7 @@ h4 {
     right: 0;
     height: 3px;
     background: var(--gradient-primary);
+    opacity: 0.5;
 }
 
 .footer-grid {
@@ -1245,7 +1246,7 @@ h4 {
 }
 
 .footer-links ul li a {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     transition: all 0.3s;
 }
@@ -1255,8 +1256,12 @@ h4 {
     padding-left: 6px;
 }
 
+.footer-links h4 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .footer-contact p {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     margin-bottom: 12px;
     display: flex;
