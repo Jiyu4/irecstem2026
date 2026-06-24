@@ -153,7 +153,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isLoggedIn()) {
-    header('Location: dashboard.php');
+    // User is already logged in - show option to logout or continue
+    $current_user_email = $_SESSION['user_email'] ?? '';
+    $current_user_name = $_SESSION['user_name'] ?? 'User';
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Already Logged In | IRECSTEM 2026</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body { background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; }
+            .card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(252,209,22,0.3); border-radius: 24px; padding: 40px; text-align: center; max-width: 450px; }
+            .card h2 { color: #FCD116; margin-bottom: 10px; }
+            .card p { color: rgba(255,255,255,0.7); margin-bottom: 30px; }
+            .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 25px; font-weight: 600; text-decoration: none; margin: 5px; }
+            .btn-primary { background: #0038A8; color: white; }
+            .btn-danger { background: rgba(206,17,38,0.2); color: #ff6b6b; border: 1px solid rgba(206,17,38,0.3); }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>You're Already Logged In</h2>
+            <p>You are currently logged in as:<br><strong style="color: #FCD116;"><?php echo htmlspecialchars($current_user_name); ?></strong><br><small><?php echo htmlspecialchars($current_user_email); ?></small></p>
+            <a href="dashboard.php" class="btn btn-primary"><i class="fas fa-home"></i> Go to Dashboard</a>
+            <a href="logout.php" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout & Register New</a>
+        </div>
+    </body>
+    </html>
+    <?php
     exit;
 }
 ?>
