@@ -1151,7 +1151,7 @@ h4 {
    Footer
 ======================================== */
 .footer {
-    background: rgba(0, 37, 122, 0.5);
+    background: rgba(0, 37, 122, 0.85);
     padding: 70px 0 0;
     position: relative;
     border-top: 3px solid var(--yellow);
@@ -1271,12 +1271,13 @@ h4 {
 
 .footer-bottom {
     padding: 24px 0;
-    border-top: 1px solid rgba(252, 209, 22, 0.2);
+    border-top: 1px solid rgba(252, 209, 22, 0.3);
     text-align: center;
+    background: rgba(0, 20, 60, 0.5);
 }
 
 .footer-bottom p {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.85rem;
 }
 
