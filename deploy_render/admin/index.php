@@ -1021,7 +1021,7 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
                         <i class="fas fa-user-shield"></i>
                         <span><?php echo htmlspecialchars($current_admin['name'] ?? 'Admin'); ?></span>
                     </div>
-                    <a href="logout.php" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a href="../logout.php" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
         </div>
