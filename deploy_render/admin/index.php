@@ -122,6 +122,19 @@ if (isset($_GET['action'])) {
         $message_type = 'success';
     }
 
+    // User Management
+    elseif ($_GET['action'] === 'delete_user' && $id > 0) {
+        // Prevent deleting own account
+        if ($id == $_SESSION['user_id']) {
+            $message = 'You cannot delete your own account!';
+            $message_type = 'error';
+        } else {
+            $db_users->delete($id);
+            $message = 'User deleted successfully!';
+            $message_type = 'success';
+        }
+    }
+
     elseif ($_GET['action'] === 'export_registrations') {
         header('Content-Type: text/csv');
         header('Content-Disposition: attachment; filename="irecstem-registrations-' . date('Y-m-d') . '.csv"');
@@ -224,6 +237,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $message = 'Email already exists.';
                 $message_type = 'error';
+            }
+        } else {
+            $message = 'Please fill all fields correctly.';
+            $message_type = 'error';
+        }
+    }
+
+    // Create User
+    elseif ($post_action === 'create_user') {
+        $name = sanitize($_POST['user_name'] ?? '');
+        $email = sanitize($_POST['user_email'] ?? '');
+        if ($name && $email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            if (!$db_users->exists('email', $email)) {
+                $db_users->insert([
+                    'name' => $name,
+                    'email' => $email,
+                    'status' => 'verified',
+                    'is_admin' => 0,
+                    'verified_at' => date('Y-m-d H:i:s')
+                ]);
+                $message = 'User account created!';
+                $message_type = 'success';
+            } else {
+                $message = 'Email already exists.';
+                $message_type = 'error';
+            }
+        } else {
+            $message = 'Please fill all fields correctly.';
+            $message_type = 'error';
+        }
+    }
+
+    // Edit User
+    elseif ($post_action === 'edit_user') {
+        $user_id = intval($_POST['user_id'] ?? 0);
+        $name = sanitize($_POST['user_name'] ?? '');
+        $email = sanitize($_POST['user_email'] ?? '');
+        $is_admin = isset($_POST['is_admin']) ? 1 : 0;
+
+        if ($user_id > 0 && $name && $email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Check if email already exists for another user
+            $existing = $db_users->findBy('email', $email);
+            if ($existing && $existing['id'] != $user_id) {
+                $message = 'Email already exists for another user.';
+                $message_type = 'error';
+            } else {
+                $db_users->update($user_id, [
+                    'name' => $name,
+                    'email' => $email,
+                    'is_admin' => $is_admin
+                ]);
+                $message = 'User updated successfully!';
+                $message_type = 'success';
             }
         } else {
             $message = 'Please fill all fields correctly.';
@@ -971,6 +1037,7 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
                     <button class="nav-tab" onclick="showTab('settings')"><i class="fas fa-cogs"></i> Settings</button>
                     <button class="nav-tab" onclick="showTab('registrations')"><i class="fas fa-users"></i> Registrations</button>
                     <button class="nav-tab" onclick="showTab('papers')"><i class="fas fa-file-alt"></i> Papers</button>
+                    <button class="nav-tab" onclick="showTab('users')"><i class="fas fa-user"></i> Users</button>
                     <button class="nav-tab" onclick="showTab('email')"><i class="fas fa-envelope"></i> Send Email</button>
                     <button class="nav-tab" onclick="showTab('admins')"><i class="fas fa-user-shield"></i> Admins</button>
                 </div>
@@ -1149,6 +1216,81 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
                             <div class="empty-state">
                                 <i class="fas fa-users"></i>
                                 <p>No registrations yet</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div class="tab-content" id="tab-users">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user"></i> User Management</h2>
+                        <button class="btn btn-primary" onclick="showModal('addUserModal')"><i class="fas fa-plus"></i> Add User</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="filter-row">
+                            <select id="userRoleFilter" onchange="filterUsers()">
+                                <option value="">All Roles</option>
+                                <option value="admin">Admins</option>
+                                <option value="user">Users</option>
+                            </select>
+                            <input type="text" id="userSearch" placeholder="Search by name or email..." onkeyup="filterUsers()" style="flex: 1; padding: 10px 16px; border: 2px solid #e5e7eb; border-radius: 10px;">
+                        </div>
+                        <?php if (count($all_users) > 0): ?>
+                            <table class="table" id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Created</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($all_users as $u): ?>
+                                        <tr data-role="<?php echo ($u['is_admin'] ?? false) ? 'admin' : 'user'; ?>">
+                                            <td>#<?php echo $u['id']; ?></td>
+                                            <td><?php echo htmlspecialchars($u['name'] ?? 'N/A'); ?></td>
+                                            <td><?php echo htmlspecialchars($u['email']); ?></td>
+                                            <td>
+                                                <?php if ($u['is_admin'] ?? false): ?>
+                                                    <span class="badge badge-warning"><i class="fas fa-user-shield"></i> Admin</span>
+                                                <?php else: ?>
+                                                    <span class="badge badge-secondary"><i class="fas fa-user"></i> User</span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                $status_class = ($u['status'] ?? '') === 'verified' ? 'success' : 'secondary';
+                                                ?>
+                                                <span class="badge badge-<?php echo $status_class; ?>"><?php echo ucfirst($u['status'] ?? 'unknown'); ?></span>
+                                            </td>
+                                            <td><?php echo isset($u['created_at']) ? date('M d, Y', strtotime($u['created_at'])) : (isset($u['verified_at']) ? date('M d, Y', strtotime($u['verified_at'])) : 'N/A'); ?></td>
+                                            <td>
+                                                <?php if (($u['id'] ?? 0) != $_SESSION['user_id']): ?>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="showEditUserModal(<?php echo $u['id']; ?>, '<?php echo htmlspecialchars(addslashes($u['name'] ?? '')); ?>', '<?php echo htmlspecialchars($u['email']); ?>', <?php echo $u['is_admin'] ?? 0; ?>)">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <a href="?action=delete_user&id=<?php echo $u['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Delete this user? This cannot be undone.')">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                <?php else: ?>
+                                                    <span style="color: rgba(255,255,255,0.4); font-size: 0.85rem;">(You)</span>
+                                                <?php endif; ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        <?php else: ?>
+                            <div class="empty-state">
+                                <i class="fas fa-users"></i>
+                                <p>No users found</p>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -1371,6 +1513,65 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
         </div>
     </div>
 
+    <!-- Add User Modal -->
+    <div class="modal" id="addUserModal">
+        <div class="modal-overlay" onclick="hideModal('addUserModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Add User</h3>
+                <button class="modal-close" onclick="hideModal('addUserModal')">&times;</button>
+            </div>
+            <form method="POST" action="">
+                <input type="hidden" name="action" value="create_user">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="user_name" required placeholder="Full name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="user_email" required placeholder="user@example.com">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="hideModal('addUserModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div class="modal" id="editUserModal">
+        <div class="modal-overlay" onclick="hideModal('editUserModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-edit"></i> Edit User</h3>
+                <button class="modal-close" onclick="hideModal('editUserModal')">&times;</button>
+            </div>
+            <form method="POST" action="">
+                <input type="hidden" name="action" value="edit_user">
+                <input type="hidden" name="user_id" id="edit_user_id">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="user_name" id="edit_user_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="user_email" id="edit_user_email" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="is_admin" id="edit_user_is_admin" style="width: auto; margin-right: 8px;">
+                        Admin privileges
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="hideModal('editUserModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         function showTab(tab) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -1432,6 +1633,28 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
                 const matchSearch = !search || text.includes(search);
                 row.style.display = matchStatus && matchSearch ? '' : 'none';
             });
+        }
+
+        function filterUsers() {
+            const role = document.getElementById('userRoleFilter').value;
+            const search = document.getElementById('userSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#usersTable tbody tr');
+
+            rows.forEach(row => {
+                const rowRole = row.getAttribute('data-role');
+                const text = row.textContent.toLowerCase();
+                const matchRole = !role || rowRole === role;
+                const matchSearch = !search || text.includes(search);
+                row.style.display = matchRole && matchSearch ? '' : 'none';
+            });
+        }
+
+        function showEditUserModal(userId, userName, userEmail, isAdmin) {
+            document.getElementById('edit_user_id').value = userId;
+            document.getElementById('edit_user_name').value = userName;
+            document.getElementById('edit_user_email').value = userEmail;
+            document.getElementById('edit_user_is_admin').checked = isAdmin == 1;
+            showModal('editUserModal');
         }
 
         // Navbar scroll effect
