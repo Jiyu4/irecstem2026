@@ -263,21 +263,21 @@ usort($my_papers, function($a, $b) {
 
                 <?php if (count($my_papers) > 0): ?>
                 <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; color: rgba(255,255,255,0.9);">
+                    <table style="width: 100%; min-width: 600px; border-collapse: collapse; color: rgba(255,255,255,0.9);">
                         <thead>
                             <tr style="border-bottom: 2px solid rgba(255,209,22,0.3);">
-                                <th style="padding: 15px 10px; text-align: left; color: var(--yellow);">Title</th>
-                                <th style="padding: 15px 10px; text-align: left; color: var(--yellow);">Track</th>
-                                <th style="padding: 15px 10px; text-align: left; color: var(--yellow);">Submitted</th>
-                                <th style="padding: 15px 10px; text-align: center; color: var(--yellow);">Status</th>
-                                <th style="padding: 15px 10px; text-align: center; color: var(--yellow);">Actions</th>
+                                <th style="padding: 15px 10px; text-align: left; color: var(--yellow); width: 35%;">Title</th>
+                                <th style="padding: 15px 10px; text-align: left; color: var(--yellow); width: 15%;">Track</th>
+                                <th style="padding: 15px 10px; text-align: left; color: var(--yellow); width: 15%;">Submitted</th>
+                                <th style="padding: 15px 10px; text-align: center; color: var(--yellow); width: 15%;">Status</th>
+                                <th style="padding: 15px 10px; text-align: center; color: var(--yellow); width: 20%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($my_papers as $paper): ?>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
                                 <td style="padding: 15px 10px;">
-                                    <strong><?php echo htmlspecialchars($paper['title']); ?></strong>
+                                    <strong style="word-break: break-word;"><?php echo htmlspecialchars($paper['title']); ?></strong>
                                     <?php if (!empty($paper['authors'])): ?>
                                     <br><small style="color: rgba(255,255,255,0.5);">by <?php echo htmlspecialchars($paper['authors']); ?></small>
                                     <?php endif; ?>
@@ -296,18 +296,18 @@ usort($my_papers, function($a, $b) {
                                         <?php echo str_replace('_', ' ', $paper['status'] ?? 'pending'); ?>
                                     </span>
                                 </td>
-                                <td style="padding: 15px 10px; text-align: center; white-space: nowrap;">
+                                <td style="padding: 15px 10px; text-align: center;">
                                     <?php if (!empty($paper['file_path'])): ?>
-                                    <a href="uploads/<?php echo $paper['file_path']; ?>" download class="btn btn-sm" style="padding: 6px 12px; font-size: 0.8rem; background: var(--primary); color: white; border-radius: 8px; margin-right: 5px; display: inline-block; text-decoration: none;">
-                                        <i class="fas fa-download"></i> Download
+                                    <a href="uploads/<?php echo htmlspecialchars($paper['file_path']); ?>" download class="btn btn-sm" style="padding: 6px 12px; font-size: 0.8rem; background: var(--primary); color: white; border-radius: 8px; margin: 2px; display: inline-block; text-decoration: none;">
+                                        <i class="fas fa-download"></i>
                                     </a>
                                     <?php endif; ?>
                                     <?php if (($paper['status'] ?? '') === 'pending'): ?>
                                     <form method="POST" action="" style="display: inline;" onsubmit="return confirm('Delete this paper?');">
                                         <input type="hidden" name="action" value="delete_paper">
                                         <input type="hidden" name="paper_id" value="<?php echo $paper['id']; ?>">
-                                        <button type="submit" style="padding: 6px 12px; font-size: 0.8rem; background: rgba(220,53,69,0.2); color: #f87171; border: 1px solid #dc3545; border-radius: 8px; cursor: pointer;">
-                                            <i class="fas fa-trash"></i> Delete
+                                        <button type="submit" style="padding: 6px 12px; font-size: 0.8rem; background: rgba(220,53,69,0.2); color: #f87171; border: 1px solid #dc3545; border-radius: 8px; cursor: pointer; margin: 2px;">
+                                            <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
                                     <?php endif; ?>
