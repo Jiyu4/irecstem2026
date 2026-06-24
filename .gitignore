@@ -1,0 +1,22 @@
+# Keep data folder but not individual data files tracked
+# Uncomment below if you want to ignore data:
+# public/data/
+# data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local

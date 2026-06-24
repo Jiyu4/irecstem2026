@@ -4,11 +4,13 @@
 services:
   - type: web
     name: irecstem2026
-    rootDir: deploy_render
+    rootDir: public
     runtime: php82
     plan: free
     buildCommand: |
-      composer install --no-dev --optimize-autoloader
+      if [ -f composer.json ]; then
+        composer install --no-dev --optimize-autoloader
+      fi
       chmod -R 755 data/ uploads/
     startCommand: php -S $HOST:$PORT
     headers:

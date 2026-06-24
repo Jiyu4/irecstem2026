@@ -1222,7 +1222,6 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
                 </div>
             </div>
 
-            <!-- Papers Tab -->
             <!-- Users Tab -->
             <div class="tab-content" id="tab-users">
                 <div class="card">
@@ -1548,7 +1547,7 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
                 <h3><i class="fas fa-user-edit"></i> Edit User</h3>
                 <button class="modal-close" onclick="hideModal('editUserModal')">&times;</button>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="" id="editUserForm">
                 <input type="hidden" name="action" value="edit_user">
                 <input type="hidden" name="user_id" id="edit_user_id">
                 <div class="form-group">
@@ -1561,9 +1560,10 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
                 </div>
                 <div class="form-group">
                     <label>
-                        <input type="checkbox" name="is_admin" id="edit_user_is_admin" style="width: auto; margin-right: 8px;">
+                        <input type="checkbox" name="is_admin" id="edit_user_is_admin" style="width: auto; margin-right: 8px;" onchange="checkAdminToggle()">
                         Admin privileges
                     </label>
+                    <small style="color: rgba(255,255,255,0.5); display: block; margin-top: 5px;">Warning: Granting admin access gives full control of the panel.</small>
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="btn btn-secondary" onclick="hideModal('editUserModal')">Cancel</button>
@@ -1656,6 +1656,15 @@ $parentBaseUrl = $protocol . $host . ($scriptPath !== '/' ? dirname($scriptPath)
             document.getElementById('edit_user_email').value = userEmail;
             document.getElementById('edit_user_is_admin').checked = isAdmin == 1;
             showModal('editUserModal');
+        }
+
+        function checkAdminToggle() {
+            const checkbox = document.getElementById('edit_user_is_admin');
+            if (checkbox.checked) {
+                if (!confirm('Are you sure you want to grant admin privileges to this user?\n\nThis will give them full access to the admin panel.')) {
+                    checkbox.checked = false;
+                }
+            }
         }
 
         // Navbar scroll effect
