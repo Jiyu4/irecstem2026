@@ -42,7 +42,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ];
 
                 try {
-                    sendEmail($email, $name, 'IRECSTEM 2026 - Verification Code', '<p>Your code: ' . $verification_code . '</p>');
+                    $email_body = '
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f4f4;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background: #f4f4f4; padding: 30px 15px;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #0038A8 0%, #00257a 100%); padding: 40px 30px; text-align: center;">
+                            <h1 style="margin: 0 0 10px; color: #FCD116; font-size: 28px; font-weight: bold;">IRECSTEM 2026</h1>
+                            <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 14px;">1st International Research and Extension Conference on STEM</p>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <h2 style="margin: 0 0 20px; color: #0038A8; font-size: 22px; text-align: center;">Email Verification</h2>
+                            <p style="margin: 0 0 30px; color: #555; font-size: 16px; line-height: 1.6; text-align: center;">Hello <strong>' . htmlspecialchars($name) . '</strong>,</p>
+                            <p style="margin: 0 0 30px; color: #555; font-size: 16px; line-height: 1.6; text-align: center;">Your verification code is:</p>
+                            <!-- Code Box -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
+                                <tr>
+                                    <td align="center">
+                                        <div style="background: linear-gradient(135deg, #0038A8 0%, #004fc7 100%); border-radius: 12px; padding: 25px 40px; display: inline-block;">
+                                            <span style="color: #FCD116; font-size: 36px; font-weight: bold; letter-spacing: 8px; font-family: monospace;">' . $verification_code . '</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- Info -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 15px;">
+                                        <p style="margin: 0 0 8px; color: #666; font-size: 13px;"><strong>Important:</strong></p>
+                                        <ul style="margin: 0; padding-left: 20px; color: #666; font-size: 13px; line-height: 1.8;">
+                                            <li>This code expires in <strong>15 minutes</strong></li>
+                                            <li>Do not share this code with anyone</li>
+                                            <li>If you did not request this, please ignore this email</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background: #0038A8; padding: 25px 30px; text-align: center;">
+                            <p style="margin: 0 0 5px; color: #FCD116; font-size: 14px; font-weight: bold;">September 15-17, 2026</p>
+                            <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 12px;">STATE UNIVERSITY OF NORTHERN NEGROS</p>
+                        </td>
+                    </tr>
+                </table>
+                <p style="color: #999; font-size: 12px; margin-top: 20px;">This is an automated message. Please do not reply.</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>';
+                    sendEmail($email, $name, 'IRECSTEM 2026 - Verification Code', $email_body);
                     $message = 'A verification code has been sent to your email.';
                     $message_type = 'success';
                     $show_verify_form = true;
@@ -114,7 +178,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['login_email'] = $email;
                 $_SESSION['login_user_id'] = $user['id'];
                 try {
-                    sendEmail($email, $user['name'] ?? 'User', 'IRECSTEM 2026 - Login Code', '<p>Your login code: ' . $login_code . '</p>');
+                    $email_body = '
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f4f4;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background: #f4f4f4; padding: 30px 15px;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #0038A8 0%, #00257a 100%); padding: 40px 30px; text-align: center;">
+                            <h1 style="margin: 0 0 10px; color: #FCD116; font-size: 28px; font-weight: bold;">IRECSTEM 2026</h1>
+                            <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 14px;">1st International Research and Extension Conference on STEM</p>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <h2 style="margin: 0 0 20px; color: #0038A8; font-size: 22px; text-align: center;">Login Verification</h2>
+                            <p style="margin: 0 0 30px; color: #555; font-size: 16px; line-height: 1.6; text-align: center;">Hello <strong>' . htmlspecialchars($user['name'] ?? 'User') . '</strong>,</p>
+                            <p style="margin: 0 0 30px; color: #555; font-size: 16px; line-height: 1.6; text-align: center;">Your login code is:</p>
+                            <!-- Code Box -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 30px;">
+                                <tr>
+                                    <td align="center">
+                                        <div style="background: linear-gradient(135deg, #0038A8 0%, #004fc7 100%); border-radius: 12px; padding: 25px 40px; display: inline-block;">
+                                            <span style="color: #FCD116; font-size: 36px; font-weight: bold; letter-spacing: 8px; font-family: monospace;">' . $login_code . '</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- Info -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 15px;">
+                                        <p style="margin: 0 0 8px; color: #666; font-size: 13px;"><strong>Important:</strong></p>
+                                        <ul style="margin: 0; padding-left: 20px; color: #666; font-size: 13px; line-height: 1.8;">
+                                            <li>This code expires in <strong>15 minutes</strong></li>
+                                            <li>Do not share this code with anyone</li>
+                                            <li>If you did not request this, please secure your account</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background: #0038A8; padding: 25px 30px; text-align: center;">
+                            <p style="margin: 0 0 5px; color: #FCD116; font-size: 14px; font-weight: bold;">September 15-17, 2026</p>
+                            <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 12px;">STATE UNIVERSITY OF NORTHERN NEGROS</p>
+                        </td>
+                    </tr>
+                </table>
+                <p style="color: #999; font-size: 12px; margin-top: 20px;">This is an automated message. Please do not reply.</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>';
+                    sendEmail($email, $user['name'] ?? 'User', 'IRECSTEM 2026 - Login Code', $email_body);
                     $message = 'A login code has been sent to your email.';
                     $message_type = 'success';
                     $show_login_verify = true;
