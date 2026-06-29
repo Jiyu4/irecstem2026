@@ -596,8 +596,20 @@ h4 {
 .hero-subtitle {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     animation: fadeInUp 0.8s var(--ease-out) 0.2s both;
+}
+
+.hero-motto {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: var(--yellow);
+    font-style: italic;
+    margin: 0 auto 30px;
+    animation: fadeInUp 0.8s var(--ease-out) 0.25s both;
+    text-align: center;
+    max-width: 100%;
+    font-weight: 500;
+    padding: 0 20px;
 }
 
 /* Hero Tags */
@@ -631,6 +643,18 @@ h4 {
 
 .tag i {
     color: var(--yellow);
+}
+
+.tag.plenary {
+    background: rgba(252, 209, 22, 0.15);
+    border-color: var(--yellow);
+    color: var(--yellow);
+}
+
+.tag.social {
+    background: rgba(168, 0, 56, 0.15);
+    border-color: rgba(168, 0, 56, 0.5);
+    color: #ff6b9d;
 }
 
 /* Hero Info Cards */
@@ -928,6 +952,41 @@ h4 {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.95rem;
     line-height: 1.7;
+}
+
+/* Program Card */
+.program-card {
+    text-align: center;
+    padding: 32px 24px;
+}
+
+.program-card .card-icon {
+    margin: 0 auto 16px;
+}
+
+.program-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.program-card .tag {
+    margin-top: 16px;
+    display: inline-block;
+}
+
+/* Schedule Day Grid */
+.schedule-day {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
 }
 
 /* Stats Grid */
